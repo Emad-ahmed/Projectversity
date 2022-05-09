@@ -19,6 +19,21 @@ html {
     margin: 0 auto;
 }
 
+.navbar {
+    background: white;
+    padding: 1.2rem;
+    box-shadow: 1px 1px;
+}
+
+.navbar-brand {
+    color: #ecf9ff;
+    font-size: 1.8rem;
+}
+
+.navbar ul li a {
+    color: black !important;
+}
+
 h1 {
     font-size: 24px;
     font-weight: 400;
