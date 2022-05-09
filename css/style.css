@@ -12,15 +12,6 @@ html {
   background-color: #ecf9ff;
 }
 
-body {
-  color: #272727;
-  font-family: 'Quicksand', serif;
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: 0;
-  padding: 1rem;
-}
-
 .main {
   max-width: 1200px;
   margin: 0 auto;
@@ -38,7 +29,7 @@ img {
   vertical-align: middle;
 }
 
-.btn {
+.card_btn {
   color: #ffffff;
   padding: 0.8rem;
   font-size: 14px;
@@ -52,7 +43,7 @@ img {
   background: transparent;
 }
 
-.btn:hover {
+.card_btn:hover {
   background-color: rgba(255, 255, 255, 0.12);
 }
 
@@ -122,12 +113,5 @@ img {
   line-height: 1.5;
   margin-bottom: 1.25rem;
   font-weight: 400;
-}
-
-.made_by {
-  font-weight: 400;
-  font-size: 13px;
-  margin-top: 35px;
-  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */
