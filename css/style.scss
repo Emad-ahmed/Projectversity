@@ -26,12 +26,23 @@ html {
 }
 
 .navbar-brand {
-    color: #ecf9ff;
+    color: #14A085 !important;
     font-size: 1.8rem;
+    font-weight: bolder;
 }
 
 .navbar ul li a {
     color: black !important;
+}
+
+.loginbtn {
+    color: #ecf9ff;
+    background: #14A085;
+    text-decoration: none;
+    padding: 6px;
+    padding-right: 25px;
+    padding-left: 25px;
+    border-radius: 10px;
 }
 
 h1 {
@@ -44,6 +55,12 @@ img {
     height: auto;
     max-width: 100%;
     vertical-align: middle;
+}
+
+.carousel-item img {
+    margin-top: 1rem;
+    height: 30rem;
+    object-fit: cover;
 }
 
 .card_btn {
