@@ -26,7 +26,7 @@ html {
 }
 
 .navbar-brand {
-    color: #14A085 !important;
+    color: #004658 !important;
     font-size: 1.8rem;
     font-weight: bolder;
 }
@@ -37,7 +37,7 @@ html {
 
 .loginbtn {
     color: #ecf9ff;
-    background: #14A085;
+    background: #004658;
     text-decoration: none;
     padding: 6px;
     padding-right: 25px;
@@ -46,9 +46,13 @@ html {
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 34px;
     font-weight: 400;
     text-align: center;
+}
+
+.main {
+    margin-top: 3rem;
 }
 
 img {
