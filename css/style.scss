@@ -126,7 +126,7 @@ img {
 
 .card_content {
     padding: 1rem;
-    background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%);
+    background: #263d42;
 }
 
 .card_title {
@@ -158,4 +158,25 @@ img {
 
 .forgot {
     text-decoration: none;
+}
+
+@media only screen and (max-width: 1200px) {
+    .container iframe {
+        width: 800px;
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .container iframe {
+        width: 600px;
+        height: 200px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .container iframe {
+        width: 350px;
+        height: 200px;
+    }
 }
