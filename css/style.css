@@ -55,6 +55,13 @@ h1 {
   text-align: center;
 }
 
+.mtitle {
+  width: 20rem;
+  margin: auto;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+
 .main {
   margin-top: 3rem;
 }
