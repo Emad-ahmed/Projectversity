@@ -142,6 +142,13 @@ img {
     background: #263d42;
 }
 
+.card_image {
+    width: 25rem;
+    height: 18rem;
+    margin: auto;
+    object-fit: cover;
+}
+
 .card_title {
     color: #ffffff;
     font-size: 1.1rem;
