@@ -1,0 +1,13 @@
+.card {
+  border: 1px solid #004658;
+  padding: 4px;
+  -webkit-box-shadow: 2px 2px 2px 2px;
+          box-shadow: 2px 2px 2px 2px;
+}
+
+.btn {
+  background: #004658;
+  color: wheat;
+  text-align: center;
+}
+/*# sourceMappingURL=bba.css.map */
