@@ -193,7 +193,7 @@ img {
 }
 
 .active {
-  background-color: #004658 !important;
+  color: #004658 !important;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -205,21 +205,29 @@ img {
 
 @media only screen and (max-width: 600px) {
   .container iframe {
-    width: 80%;
+    width: 100%;
     height: 200px;
     margin: auto;
+  }
+  .active {
+    background-color: none;
+    color: #004658 !important;
   }
 }
 
 @media only screen and (max-width: 425px) {
   .container iframe {
-    width: 70%;
+    width: 80%;
     height: 200px;
   }
   .create {
     text-decoration: none;
-    padding-right: 2rem;
+    display: block;
     color: tomato;
+  }
+  .active {
+    background-color: none;
+    color: #004658 !important;
   }
 }
 /*# sourceMappingURL=style.css.map */
