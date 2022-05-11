@@ -132,40 +132,35 @@
                 <h2>Registration Form</h2>
             </div>
             <div class="row clearfix">
-                <div class="">
-                    <form>
-                        <div class="row clearfix">
-                            <div class="col_half">
-                                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                                    <input type="text" name="name" placeholder="First Name" />
-                                </div>
-                            </div>
-                            <div class="col_half">
-                                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                                    <input type="text" name="name" placeholder="Last Name" required />
-                                </div>
-                            </div>
+                <div>
+                    <form onsubmit="return formValidation()">
+                        <div class="input_field mb-0"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                            <input type="text" name="name" id="name" placeholder="Full Name" required />
+                            <p class="mt-0 errorp" id="ferror"></p>
                         </div>
-                        <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-                            <input type="email" name="email" placeholder="Email" required />
+
+                        <div class="input_field mb-0"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                            <input type="email" name="email" id="email" placeholder="Email" required />
                         </div>
-                        <div class="input_field"> <span><i aria-hidden="true" class="fa fa-mobile"></i></span>
-                            <input type="text" name="phone" placeholder="+88" required />
+                        <p class="mt-0 errorp" id="eerror"></p>
+                        <div class="input_field mb-0"> <span><i aria-hidden="true" class="fa fa-mobile"></i></span>
+                            <input type="text" name="phone" id="phone" placeholder="+88" required />
                         </div>
-                        <div class="input_field radio_option">
+                        <p class="mt-0 errorp" id="merror"></p>
+                        <div class="input_field mb-0 radio_option">
                             <input type="radio" name="radiogroup1" id="rd1">
                             <label for="rd1">Male</label>
                             <input type="radio" name="radiogroup1" id="rd2">
                             <label for="rd2">Female</label>
                         </div>
-                        <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                            <input type="password" name="password" placeholder="Password" required />
+                        <div class="input_field mb-0"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                            <input type="password" id="password" name="password" placeholder="Password" required />
                         </div>
-                        <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                            <input type="password" name="password" placeholder="Re-type Password" required />
+                        <p class="mt-0 errorp" id="perror"></p>
+                        <div class="input_field mb-0"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                            <input type="password" id="cpassword" name="password" placeholder="Re-type Password" required />
                         </div>
-
-
+                        <p class="mt-0 errorp" id="cperror"></p>
 
 
                         <input class="button" type="submit" value="Register" />
@@ -292,7 +287,7 @@
 
 
     <!-- Optional JavaScript; choose one of the two! -->
-
+    <script src="js/validation.js"></script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
