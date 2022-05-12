@@ -24,7 +24,7 @@ function formValidation() {
         document.getElementById("eerror").innerHTML = "";
 
     } else {
-        document.getElementById("eerror").innerHTML = "**Email Is Inavlid**";
+        document.getElementById("eerror").innerHTML = "**Email Is Invalid**";
         return false
     }
 
@@ -32,7 +32,7 @@ function formValidation() {
         document.getElementById("merror").innerHTML = "";
 
     } else {
-        document.getElementById("merror").innerHTML = "**Phone Number Is Inavlid**";
+        document.getElementById("merror").innerHTML = "**Phone Number Is Invalid**";
         return false;
     }
 
@@ -40,7 +40,7 @@ function formValidation() {
         document.getElementById("perror").innerHTML = "";
 
     } else {
-        document.getElementById("perror").innerHTML = "**Passowrd is Invalid**";
+        document.getElementById("perror").innerHTML = "**Password Incorrect**";
         return false;
     }
 
