@@ -8,14 +8,15 @@ function formValidation() {
 
     var fnamepattern = /^[a-zA-Z. ]+$/;
     var phonePattern = /^(\+88|88)?01[3-9]\d{8}$/;
-    var emailPattern = /^[A-Za-z_0-9]{3,}@[A-Za-z]+.[a-z]{3,}$/
+    var emailPattern = /^[a-zA-Z0-9_-]{3,}@[a-zA-Z0-9_-]{3,}\.[a-zA-Z]{2,4}$/
+    var passwordpattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/
 
 
     if (fnamepattern.test(fname)) {
         document.getElementById("ferror").innerHTML = "";
 
     } else {
-        document.getElementById("ferror").innerHTML = "**Only Character Are Allowed";
+        document.getElementById("ferror").innerHTML = "**Only Character Are Allowed**";
         return false;
     }
 
@@ -23,17 +24,32 @@ function formValidation() {
         document.getElementById("eerror").innerHTML = "";
 
     } else {
-        document.getElementById("error").innerHTML = "**Email Is Inavlid";
+        document.getElementById("eerror").innerHTML = "**Email Is Inavlid**";
+        return false
     }
 
     if (phonePattern.test(phone)) {
         document.getElementById("merror").innerHTML = "";
 
     } else {
-        document.getElementById("merror").innerHTML = "**Phone Number Is Inavlid";
+        document.getElementById("merror").innerHTML = "**Phone Number Is Inavlid**";
         return false;
     }
 
+    if (passwordpattern.test(password)) {
+        document.getElementById("perror").innerHTML = "";
+
+    } else {
+        document.getElementById("perror").innerHTML = "**Passowrd is Invalid**";
+        return false;
+    }
+
+    if (password == cpassword) {
+        document.getElementById("cperror").innerHTML = "";
+    } else {
+        document.getElementById("cperror").innerHTML = "**Password Not Match**";
+        return false;
+    }
 
 
 

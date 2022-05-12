@@ -62,6 +62,14 @@ h1 {
     text-align: center;
 }
 
+.carousel-item {
+    height: 30rem;
+}
+
+.carousel-item img {
+    object-fit: cover;
+}
+
 .mtitle {
     width: 20rem;
     margin: auto;
@@ -71,6 +79,10 @@ h1 {
 
 .dropdown-menu {
     border: 1px solid #004658;
+}
+
+.card {
+    border: 1px solid #1B1C31;
 }
 
 .mtitleB {
