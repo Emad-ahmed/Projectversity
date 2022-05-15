@@ -21,10 +21,9 @@ html {
     margin-bottom: 0;
 }
 
-.navbar-brand {
-    color: #004658 !important;
-    font-size: 1.8rem;
-    font-weight: bolder;
+.navbar-brand img {
+    width: 3.5rem;
+    height: 3.5rem;
 }
 
 .navbar ul li a {
@@ -116,7 +115,9 @@ img {
 .admissioncon {
     background-color: #ffffff;
     border: 1px solid #c4c6c7;
-    padding: 20px;
+    padding: 6rem;
+    padding-top: 3rem;
+    border-radius: 3rem;
 }
 
 .card_btn {
