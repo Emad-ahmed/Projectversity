@@ -1,0 +1,31 @@
+.resultview {
+  padding: 5rem;
+  margin-bottom: 10rem;
+  -webkit-box-shadow: 1px 1px 1px 1px;
+          box-shadow: 1px 1px 1px 1px;
+}
+
+.title_container {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.resultview form input {
+  width: 23rem;
+  margin-right: 1rem;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  padding: 6px;
+}
+
+.resultview form button {
+  background: #004658;
+  color: white;
+  padding: 6px;
+  padding-right: 1.6rem;
+  padding-left: 1.6rem;
+  border: none;
+}
+/*# sourceMappingURL=result.css.map */
