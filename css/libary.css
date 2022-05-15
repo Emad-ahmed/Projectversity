@@ -1,0 +1,30 @@
+.libary h1 {
+  border-bottom: 1px solid black;
+  width: 16rem;
+  margin: auto;
+  margin-top: 1.6rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.8rem;
+}
+
+.sourceli {
+  background: #e4e1e1;
+  padding: 6rem;
+  padding-top: 3rem;
+  border-radius: 3rem;
+}
+
+.re {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.e {
+  margin-top: 1rem;
+}
+
+.for {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+/*# sourceMappingURL=libary.css.map */
