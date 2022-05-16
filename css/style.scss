@@ -247,9 +247,6 @@ img {
         display: block;
         color: tomato;
     }
-    .sourceli {
-        padding: 1.5rem;
-    }
 }
 
 @media only screen and (max-width: 425px) {
@@ -268,8 +265,5 @@ img {
     .active {
         background-color: none;
         color: #004658 !important;
-    }
-    .sourceli {
-        padding: 1.5rem;
     }
 }
