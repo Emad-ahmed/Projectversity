@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/reg.css">
+
     <title>Home</title>
 </head>
 
@@ -86,7 +87,7 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="cse.html">Semister Registration</a></li>
+                            <li><a class="dropdown-item" href="">Semister Registration</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -126,36 +127,32 @@
             </div>
         </div>
     </nav>
-
-
     <div class="form_wrapper mt-5">
         <div class="form_container">
             <div class="title_container">
-                <h2>Login Form</h2>
+                <h2>Result</h2>
             </div>
             <div class="row clearfix">
                 <div class="">
-                    <form>
-                        <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-                            <input type="email" name="email" placeholder="Email" required />
+                    <form onsubmit="return formValidationStu()">
+                        <div class="input_field"> <span><i aria-hidden="true" class="fa fa-navicon"></i></span>
+                            <input type="text" id="id" name="id" placeholder="Student Id" required />
+                            <p class="mt-0 errorp" id="siderror"></p>
                         </div>
-                        <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                            <input type="password" name="password" placeholder="Password" required />
+                        <div class="input_field"> <span><i aria-hidden="true" class="fa fa-calendar"></i></span>
+                            <input type="text" id="birth" name="date" placeholder="DD/MM/YYYY" required />
+                            <p class="mt-0 errorp" id="birerror"></p>
                         </div>
 
-                        <input class="button" type="submit" value="login" />
-                        <div>
-                            <a href="resgistration.html" class="create">Create new account</a>
-                            <a href="forgot.html" class="forgot">Forgot Password</a>
-                        </div>
+                        <input class="button" type="submit" value="Fetch Result" />
+
                     </form>
                 </div>
             </div>
         </div>
     </div>
 
-
-
+    <script src="js/validationresult.js"></script>
     <div class="pg-footer">
         <footer class="footer">
             <svg class="footer-wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
@@ -267,6 +264,7 @@
         </footer>
     </div>
     <!-- Optional JavaScript; choose one of the two! -->
+
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

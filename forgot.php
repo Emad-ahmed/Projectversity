@@ -86,7 +86,7 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="cse.html">Semister Registration</a></li>
+                            <li><a class="dropdown-item" href="">Semister Registration</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>

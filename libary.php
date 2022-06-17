@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/reg.css">
-    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/libary.css">
     <title>Home</title>
+
     <style>
 
     </style>
@@ -91,7 +92,7 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Semister Registration</a></li>
+                            <li><a class="dropdown-item" href="">Semister Registration</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -131,67 +132,56 @@
         </div>
     </nav>
 
+    <div class="container libary">
+        <h1>Libary</h1>
+        <div class="sourceli">
+            <h5>Libary Website:
+                <a href="http://202.5.49.103/">Library.lus.ac.bd</a>
+            </h5>
+            <div class="re">
+                <h3>Resources</h3>
+                <p>
+                    <a href="https://www.research4life.org/">E-Journal</a>(User Name: bgdR4L046, Password: t10005D)</p>
+                <a href="https://www.wileyindia.com/Wiley_Online_Resources/UGC%20Bangladesh/UGC%20Bangladesh.html">E-Books</a><span>OPAC (For Library Search)</span>
+                <br>
+                <a href="https://www.lus.ac.bd/e-paper/" class="e">E-News Paper</a>
+            </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="title-heading">
-                    <h1>Administration</h1>
-                    <h6>Office of the Vice-Chancellor</h6>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-sm-4 col-md-4 col-xl-4 col-xs-12">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h4 class="card-title">Prof. Qazi Azizul Mowla, PhD, FIAB, AAG</h4>
-                        <div class="card-image" style="color: #213661;">
-                            <img src="img/kazi.JPG" alt="">
-                        </div>
-                        <p class="card-text ">Hon’ble Vice Chancellor</p>
-                        <p class="card-text ">Tel Office : 01313084499</p>
-                        <p class="card-text ">Ext. 110</p>
-                        <p class="card-text ">Email: vc@lus.ac.bd</p>
+            <div class="for">
+                <h3>
+                    Forms</h3>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h6>Library Membership form</h6>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-4 col-md-4 col-xl-4 col-xs-12">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h4 class="card-title">Mr. Jalal Uddin</h4>
-                        <div class="card-image" style="color: #5e371b;">
-                            <img src="img/jalal.JPG" alt="">
-                        </div>
-                        <p class="card-text">Assistant Administrative Officer</p>
-                        <p class="card-text">Tel Office: 01313084499, Ext.111</p>
-                        <p class="card-text">Cell: 01713816365</p>
-                        <p class="card-text">Email: vcoffice@lus.ac.bd</p>
+                    <div class="col-lg-6">
+                        <a href="">Download</a>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-4 col-md-4 col-xl-4 col-xs-12">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h4 class="card-title">Mr. Banamali Bhowmick</h4>
-                        <div class="card-image" style="color:#bc3330;">
-                            <img src="img/bon.JPG" alt="">
-                        </div>
-                        <p class="card-text">Treasurer</p>
-                        <p class="card-text">Tel Office : 01313084499</p>
-                        <p class="card-text">Ext. 120</p>
-                        <p class="card-text">Cell: 01711402050</p>
-                        <p class="card-text">Email: treasurer@lus.ac.bd</p>
-                        <p class="card-text">banamalibhowmick@live.com</p>
+                    <div class="col-lg-6">
+                        <h6>Digital ID card form</h6>
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="">Download</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <h6>Form for Book Issue to the Part-time Gust Teacher</h6>
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="">Download</a>
                     </div>
                 </div>
             </div>
 
+            <div class="ser">
+                <h3>Services and Facilities</h3>
+                <h6>Issue and Return of Books:</h6>
+                <p>One faculty member may borrow 10 books for 20 days. Students may borrow 2 books for 7 days. Officers and staffs may borrow 2 books for 7 days. Research fellows may borrow 4 books for 14 days.</p>
+                <h6>Internship Report, Thesis, dissertation:</h6>
+                <p>A complete list of Internship Report.</p>
+            </div>
 
         </div>
     </div>
-
-
 
     <div class="pg-footer mt-5">
         <footer class="footer">
@@ -259,7 +249,7 @@
                     <div class="footer-call-to-action">
                         <h2 class="footer-call-to-action-title"> Let's Chat</h2>
                         <p class="footer-call-to-action-description"> Have a support question?</p>
-                        <a class="footer-call-to-action-button button" href="#" target="_self" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> Get in Touch </a>
+                        <a class="footer-call-to-action-button button" href="#" target="_self"> Get in Touch </a>
                     </div>
                     <div class="footer-call-to-action">
                         <h2 class="footer-call-to-action-title"> You Call Us</h2>
@@ -303,8 +293,6 @@
             </div>
         </footer>
     </div>
-
-
 
     <!-- Optional JavaScript; choose one of the two! -->
 

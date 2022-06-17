@@ -11,11 +11,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/reg.css">
+    <link rel="stylesheet" href="css/bba.css">
     <title>Home</title>
-
-    <style>
-
-    </style>
 </head>
 
 <body>
@@ -132,151 +129,54 @@
     </nav>
 
 
+    <h1 class="text-center border-bottom pb-4 mt-4">Faculty Members of Business Administration</h1>
 
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <div class="container mt-5">
+        <div class="row m-auto">
+            <div class="col-lg-4">
+                <div class="card mb-4" style="width: 22rem; height: 28rem;">
+                    <img src="img/MULLA.JPG" class="card-img-top" alt="..." style="height: 15rem; width:15rem; object-fit: cover; margin: auto;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Professor Dr. Bashir Ahmed Bhuiyan</h5>
+                        <p class="card-text">Dean</p>
+                        <p class="card-text">Business Administration</p>
+                        <div class="text-center">
+                            <a href="" class="btn">See all Information</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card mb-4" style="width: 22rem; height: 28rem;">
+                    <img src="img/b1.JPG" class="card-img-top" alt="..." style="height: 15rem; width:15rem; object-fit: cover; margin: auto;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">
+                            Md. Jahangir Alam</h5>
+                        <p class="card-text">Associate Professor & Head</p>
+                        <p class="card-text">Business Administration</p>
+                        <div class="text-center">
+                            <a href="" class="btn">See all Information</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card bbacard" style="width: 22rem; height: 28rem;">
+                    <img src="img/mulla1.JPG" class="card-img-top" alt="..." style="height: 15rem; width:15rem; object-fit: cover; margin: auto;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Professor Dr. Bashir Ahmed Bhuiyan</h5>
+                        <p class="card-text">Dean</p>
+                        <p class="card-text">Business Administration</p>
+                        <div class="text-center">
+                            <a href="" class="btn">See all Information</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="carousel-inner ">
-            <div class="carousel-item active">
-                <img src="img/slide1.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="img/slide2.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="img/slide3.jpg" class="d-block w-100" alt="...">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
     </div>
-
-
-    <div class="main">
-        <h1 class="mtitle">Latest News</h1>
-        <ul class="cards">
-            <li class="cards_item">
-                <div class="card">
-                    <div class="card_image"><img src="img/p3.JPG"></div>
-                    <div class="card_content">
-                        <h2 class="card_title">আইএবি’র অ‍্যাক্রেডিটেশন টীমের লিডিং ইউনিভার্সিটি পরিদর্শন</h2>
-                        <p class="card_text">স্থাপত্যবিভাগের আবেদনের প্রেক্ষিতে বাংলাদেশ স্থপতি ইনস্টিটিউটের (আইএবি) অ‍্যাক্রেডিটেশন টীম সিলেটের প্রথম বেসরকারি বিশ্ববিদ্যালয় লিডিং ইউনিভার্সিটির স্থাপত্য বিভাগ পরিদর্শন করেছেন।</p>
-                        <button class="btn card_btn">Read More</button>
-                    </div>
-                </div>
-            </li>
-            <li class="cards_item">
-                <div class="card">
-                    <div class="card_image"><img src="img/p1.JPG"></div>
-                    <div class="card_content">
-                        <h2 class="card_title">বিশ্বসেরা গবেষকের তালিকায় লিডিং ইউনিভার্সিটির উপাচার্য কাজী আজিজুল মাওলা</h2>
-                        <p class="card_text">আলপার ডজার (এডি) সায়েন্টিফিক ইনডেক্স র‍‍্যাংকিং- ২০২২ এ বিশ্বসেরা গবেষকদের তালিকায় স্থান পেয়েছেন লিডিং ইউনিভার্সিটির উপাচার্য ও বাংলাদেশ প্রকৌশল বিশ্ববিদ্যালয়ের প্রফেসর ড. কাজী আজিজুল মাওলা।</p>
-                        <button class="btn card_btn">Read More</button>
-                    </div>
-                </div>
-            </li>
-            <li class="cards_item">
-                <div class="card">
-                    <div class="card_image"><img src="img/p2.JPG"></div>
-                    <div class="card_content">
-                        <h2 class="card_title">ভাষা অলিম্পিয়াডে লিডিং ইউনিভার্সিটির শিক্ষার্থীদের অসাধারন সাফল্য অর্জন</h2>
-                        <p class="card_text">ভাষা অলিম্পিয়াডে লিডিং ইউনিভার্সিটির শিক্ষার্থীরা অসাধারণ সাফল্য অর্জন করেছে। শিক্ষার্থীরা ফাইনাল রাউন্ডে অসাধারণ সাফল্য অর্জন করেছে। </p>
-                        <button class="btn card_btn">Read More</button>
-                    </div>
-                </div>
-            </li>
-
-        </ul>
-    </div>
-
-
-    <div class="main mb-5">
-        <h1 class="mtitle">Events</h1>
-        <ul class="cards">
-            <li class="cards_item">
-                <div class="card">
-                    <div class="card_image"><img src="img/n1.JPG"></div>
-                    <div class="card_content">
-                        <h2 class="card_title">IDEA HACK-2018</h2>
-                    </div>
-                </div>
-            </li>
-            <li class="cards_item">
-                <div class="card">
-                    <div class="card_image"><img src="img/n2.JPG"></div>
-                    <div class="card_content">
-                        <h2 class="card_title">Basic IoT workshop</h2>
-
-                    </div>
-                </div>
-            </li>
-            <li class="cards_item">
-                <div class="card">
-                    <div class="card_image"><img src="img/n3.JPG"></div>
-                    <div class="card_content">
-                        <h2 class="card_title">Seminar on Networking Systems by IEEE</h2>
-
-                    </div>
-                </div>
-            </li>
-
-        </ul>
-    </div>
-
-
-
-    <div class="main mt-5">
-        <h1 class="mtitle">Campus Facilities</h1>
-        <ul class="cards">
-            <li class="cards_item">
-                <div class="card">
-                    <div class="card_image text-center"><img src="img/w1.png" style="height: 15rem;"></div>
-                    <div class="card_content">
-                        <h2 class="card_title">Free Wi-Fi Access</h2>
-                        <p class="card_text">Students are given access to high speed internet all over the campus through wifi.</p>
-
-                    </div>
-                </div>
-            </li>
-            <li class="cards_item">
-                <div class="card">
-                    <div class="card_image text-center"><img src="img/w2.png" style="height: 15rem;"></div>
-                    <div class="card_content">
-                        <h2 class="card_title">Highly Equipped Labs</h2>
-                        <p class="card_text">There are labs equipped with modern instruments in every relevant department</p>
-
-                    </div>
-                </div>
-            </li>
-            <li class="cards_item">
-                <div class="card">
-                    <div class="card_image text-center"><img src="img/w3.png" style="height: 16rem;"></div>
-                    <div class="card_content">
-                        <h2 class="card_title">Extra Curricular Activities</h2>
-                        <p class="card_text">Students can participate in various extra curricular activities through various clubs.</p>
-
-                    </div>
-                </div>
-            </li>
-
-        </ul>
-    </div>
-
-    <h1 class="mb-4 mtitle">Campus Location</h1>
-    <div class="container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.838098759185!2d91.80271791407853!3d24.86937858404973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3751015addbec3b7%3A0x9e87b7be58b5f67e!2z4Kay4Ka_4Kah4Ka_4KaCIOCmh-CmieCmqOCmv-CmreCmvuCmsOCnjeCmuOCmv-Cmn-Cmvw!5e0!3m2!1sbn!2sbd!4v1652118830899!5m2!1sbn!2sbd"
-            style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-
 
     <div class="pg-footer mt-5">
         <footer class="footer">

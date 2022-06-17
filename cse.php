@@ -8,15 +8,15 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/reg.css">
+    <link rel="stylesheet" href="css/bba.css">
     <title>Home</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="" class="logopng"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,7 +25,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About Us</a>
@@ -35,11 +35,14 @@
                   Faculty Members
                 </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
                             <li><a class="dropdown-item" href="bba.html">Department Business Administration</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Department Of CSE</a></li>
+                            <li><a class="dropdown-item" href="cse.html">Department Of CSE</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -113,67 +116,70 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="libary.html">Libary</a>
                     </li>
                 </ul>
-                <a href="login.html" class="loginbtn text-white">Login</a>
+                <a href="login.html" class="loginbtn">Login</a>
             </div>
         </div>
     </nav>
 
 
-    <div class="form_wrapper mt-5">
-        <div class="form_container">
-            <div class="title_container">
-                <h2>Registration Form</h2>
+    <h1 class="text-center border-bottom pb-4 mt-4">Faculty Members of Computer Science & Engineering</h1>
+
+    <div class="container mt-5">
+        <div class="row m-auto">
+            <div class="col-lg-4">
+                <div class="card mb-4" style="width: 22rem; height: 28rem;">
+                    <img src="img/mony.JPG" class="card-img-top" alt="..." style="height: 15rem; width:15rem; object-fit: cover; margin: auto;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">
+                            Md. Jehadul Islam Mony</h5>
+                        <p class="card-text">Lecturer</p>
+                        <p class="card-text">Computer Science & Engineering</p>
+                        <div class="text-center">
+                            <a href="" class="btn">See all Information</a>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            <div class="row clearfix">
-                <div>
-                    <form onsubmit="return formValidation()">
-                        <div class="input_field mb-0"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input type="text" name="name" id="name" placeholder="Full Name" required />
-                            <p class="mt-0 errorp" id="ferror"></p>
+            <div class="col-lg-4">
+                <div class="card mb-4" style="width: 22rem; height: 28rem;">
+                    <img src="img/faruk.JPG" class="card-img-top" alt="..." style="height: 15rem; width:15rem; object-fit: cover; margin: auto;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">
+                            Prof. Dr. AS. Sikder</h5>
+                        <p class="card-text">Professor</p>
+                        <p class="card-text">Computer Science & Engineering</p>
+                        <div class="text-center">
+                            <a href="" class="btn">See all Information</a>
                         </div>
+                    </div>
 
-                        <div class="input_field mb-0"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-                            <input type="text" name="email" id="email" placeholder="Email" required />
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card" style="width: 22rem; height: 28rem;">
+                    <img src="img/shafkat.JPG" class="card-img-top" alt="..." style="height: 15rem; width:15rem; object-fit: cover; margin: auto;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Shafkat Kibria</h5>
+                        <p class="card-text">Assistant Professor</p>
+                        <p class="card-text">Computer Science & Engineering</p>
+                        <div class="text-center">
+                            <a href="" class="btn">See all Information</a>
                         </div>
-                        <p class="mt-0 errorp" id="eerror"></p>
-                        <div class="input_field mb-0"> <span><i aria-hidden="true" class="fa fa-mobile"></i></span>
-                            <input type="text" name="phone" id="phone" placeholder="+88" required />
-                        </div>
-                        <p class="mt-0 errorp" id="merror"></p>
-                        <div class="input_field mb-2 radio_option">
-                            <input type="radio" name="radiogroup1" id="rd1">
-                            <label for="rd1">Male</label>
-                            <input type="radio" name="radiogroup1" id="rd2">
-                            <label for="rd2">Female</label>
-                        </div>
-                        <div class="input_field mb-0"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                            <input type="password" id="password" name="password" placeholder="Password" required />
-                        </div>
-                        <p class="mt-0 errorp" id="perror"></p>
-                        <div class="input_field mb-0"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                            <input type="password" id="cpassword" name="password" placeholder="Re-type Password" required />
-                        </div>
-                        <p class="mt-0 errorp" id="cperror"></p>
+                    </div>
 
-
-                        <input class="button" type="submit" value="Register" />
-                        <a href="login.html">Already Have an account?</a>
-                    </form>
                 </div>
             </div>
         </div>
     </div>
 
-
-
-    <div class="pg-footer">
+    <div class="pg-footer mt-5">
         <footer class="footer">
             <svg class="footer-wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
             <path class="footer-wave-path" d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z"></path>
@@ -278,16 +284,14 @@
             <div class="footer-copyright">
                 <div class="footer-copyright-wrapper">
                     <p class="footer-copyright-text">
-                        <a class="footer-copyright-link" href="#" target="_self"> ©2022. | Designed By: Emad Ahmed. | All rights reserved. </a>
-                    </p>
+                        <a class="footer-copyright-link" href="#" target="_self"> ©2022. | Designed By: Emad Ahmed. | All rights reserved. </a> </p>
                 </div>
             </div>
         </footer>
     </div>
 
-
     <!-- Optional JavaScript; choose one of the two! -->
-    <script src="js/validation.js"></script>
+
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
