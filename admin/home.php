@@ -34,7 +34,7 @@
                 <a href="#"><i class="fas fa-qrcode"></i>Dashboard</a>
             </li>
             <li>
-                <a href="#"><i class="fas fa-link"></i>Result</a>
+                <a href="resultreg.php"><i class="fas fa-link"></i>Result</a>
             </li>
             <li>
                 <a href="#"><i class="fas fa-stream"></i>Notice</a>
