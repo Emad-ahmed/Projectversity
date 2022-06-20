@@ -25,23 +25,15 @@
                 <a href="#"><i class="fas fa-qrcode"></i>Dashboard</a>
             </li>
             <li>
-                <a href="#"><i class="fas fa-link"></i>Shortcut</a>
+                <a href="#"><i class="fas fa-link"></i>Result</a>
             </li>
             <li>
-                <a href="#"><i class="fas fa-stream"></i>Overview</a>
+                <a href="#"><i class="fas fa-stream"></i>Notice</a>
             </li>
             <li>
-                <a href="#"><i class="fas fa-calendar"></i>Events</a>
+                <a href="#"><i class="fas fa-calendar"></i>Add News</a>
             </li>
-            <li>
-                <a href="#"><i class="fas fa-question-circle"></i>About</a>
-            </li>
-            <li>
-                <a href="#"><i class="fas fa-sliders-h"></i>Services</a>
-            </li>
-            <li>
-                <a href="#"><i class="fas fa-envelope"></i>Contact</a>
-            </li>
+
         </ul>
     </div>
 
