@@ -137,7 +137,7 @@
             <a class="nav-link" href="libary.php">Libary</a>
           </li>
         </ul>
-        <a href="login.html" class="loginbtn text-white">Login</a>
+        <a href="login.php" class="loginbtn text-white">Login</a>
       </div>
     </div>
   </nav>
@@ -149,7 +149,7 @@
       </div>
       <div class="row clearfix">
         <div>
-          <form onsubmit="return formValidation()">
+          <form action="registeraction.php" method="POST" onsubmit="return formValidation()">
             <div class="input_field mb-0">
               <span><i aria-hidden="true" class="fa fa-user"></i></span>
               <input type="text" name="name" id="name" placeholder="Full Name" required />
@@ -185,12 +185,12 @@
             <p class="mt-0 errorp" id="perror"></p>
             <div class="input_field mb-0">
               <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-              <input type="password" id="cpassword" name="password" placeholder="Re-type Password" required />
+              <input type="password" id="cpassword" name="cpassword" placeholder="Re-type Password" required />
             </div>
             <p class="mt-0 errorp" id="cperror"></p>
 
             <input class="button" type="submit" value="Register" />
-            <a href="login.html">Already Have an account?</a>
+            <a href="login.php">Already Have an account?</a>
           </form>
         </div>
       </div>

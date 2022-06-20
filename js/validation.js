@@ -4,13 +4,13 @@ function formValidation() {
     var phone = document.getElementById("phone").value;
     var password = document.getElementById("password").value;
     var cpassword = document.getElementById("cpassword").value;
-
+    var studentid = document.getElementById("id_no").value;
 
     var fnamepattern = /^[a-zA-Z. ]+$/;
     var phonePattern = /^(\+88|88)?01[3-9]\d{8}$/;
     var emailPattern = /^[a-zA-Z0-9_-]{3,}@[a-zA-Z0-9_-]{3,}\.[a-zA-Z]{2,4}$/
     var passwordpattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/
-
+    var studentidpattern = /^[1-9]{8,15}$/;
 
     if (fnamepattern.test(fname)) {
         document.getElementById("ferror").innerHTML = "";
@@ -48,6 +48,14 @@ function formValidation() {
         document.getElementById("cperror").innerHTML = "";
     } else {
         document.getElementById("cperror").innerHTML = "**Password Not Match**";
+        return false;
+    }
+
+    if (studentidpattern.test(studentid)) {
+        document.getElementById("siderror").innerHTML = "";
+
+    } else {
+        document.getElementById("siderror").innerHTML = "**Enter Valid Student Id**";
         return false;
     }
 
