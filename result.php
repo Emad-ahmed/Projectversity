@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -82,10 +87,18 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="result.php">Result</a></li>
-                            <li>
+                            <?php
+
+                            if (isset($_SESSION['student_id'])) {
+                                echo '<li><a class="dropdown-item" href="result.php">Result</a></li>';
+                                echo '<li>
                                 <hr class="dropdown-divider">
-                            </li>
+                            </li>';
+                            }
+
+                            ?>
+
+
                             <li><a class="dropdown-item" href="">Semister Registration</a></li>
                             <li>
                                 <hr class="dropdown-divider">
@@ -122,7 +135,16 @@
                     </li>
 
                 </ul>
-                <a href="login.php" class="loginbtn">Login</a>
+                <?php
+
+                if (isset($_SESSION['student_id'])) {
+                    echo '<a href="logout.php" class="loginbtn">Logout</a>';
+                } else {
+                    echo '<a href="login.php" class="loginbtn">Login</a>';
+                }
+
+
+                ?>
             </div>
         </div>
     </nav>

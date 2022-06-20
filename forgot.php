@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -122,7 +127,16 @@
                     </li>
 
                 </ul>
-                <a href="login.php" class="loginbtn">Login</a>
+                <?php
+
+                if (isset($_SESSION['student_id'])) {
+                    echo '<a href="logout.php" class="loginbtn">Logout</a>';
+                } else {
+                    echo '<a href="login.php" class="loginbtn">Login</a>';
+                }
+
+
+                ?>
             </div>
         </div>
     </nav>

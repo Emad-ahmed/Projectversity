@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -122,7 +127,16 @@
                     </li>
 
                 </ul>
-                <a href="login.html" class="loginbtn">Login</a>
+                <?php
+
+                if (isset($_SESSION['student_id'])) {
+                    echo '<a href="logout.php" class="loginbtn">Logout</a>';
+                } else {
+                    echo '<a href="login.php" class="loginbtn">Login</a>';
+                }
+
+
+                ?>
             </div>
         </div>
     </nav>
@@ -135,9 +149,9 @@
             </div>
             <div class="row clearfix">
                 <div class="">
-                    <form>
-                        <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-                            <input type="email" name="email" placeholder="Email" required />
+                    <form action="loginAction.php" method="POST">
+                        <div class="input_field"> <span><i aria-hidden="true" class="fa fa-id-badge"></i></span>
+                            <input type="text" name="id_no" id="id_no" placeholder="Id No" required />
                         </div>
                         <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
                             <input type="password" name="password" placeholder="Password" required />

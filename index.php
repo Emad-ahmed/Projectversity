@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -16,6 +22,7 @@
     <style>
 
     </style>
+
 </head>
 
 <body>
@@ -126,7 +133,27 @@
                         <a class="nav-link" href="libary.php">Libary</a>
                     </li>
                 </ul>
-                <a href="login.php" class="loginbtn">Login</a>
+
+
+
+
+                <?php
+
+                if (isset($_SESSION['student_id'])) {
+                    echo '<a href="logout.php" class="loginbtn">Logout</a>';
+                } else {
+                    echo '<a href="login.php" class="loginbtn">Login</a>';
+                }
+
+
+                ?>
+
+
+
+
+
+
+
             </div>
         </div>
     </nav>
@@ -388,6 +415,7 @@
             </div>
         </footer>
     </div>
+
 
     <!-- Optional JavaScript; choose one of the two! -->
 

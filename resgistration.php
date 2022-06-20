@@ -173,9 +173,9 @@
             </div>
             <p class="mt-0 errorp" id="merror"></p>
             <div class="input_field mb-2 radio_option">
-              <input type="radio" name="radiogroup1" id="rd1" />
+              <input type="radio" name="radiogroup1" id="rd1" value="Male" />
               <label for="rd1">Male</label>
-              <input type="radio" name="radiogroup1" id="rd2" />
+              <input type="radio" name="radiogroup1" id="rd2" value="FeMale" />
               <label for="rd2">Female</label>
             </div>
             <div class="input_field mb-0">
