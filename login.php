@@ -168,7 +168,7 @@ session_start();
 
                         <input class="button" type="submit" value="login" />
                         <div>
-                            <a href="resgistration.php" class="create">Create new account</a>
+                            <a href="resgistration.php">Create new account</a>
                             <a href="forgot.html" class="forgot">Forgot Password</a>
                         </div>
                     </form>

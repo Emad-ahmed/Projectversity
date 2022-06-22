@@ -40,10 +40,10 @@
                 <a href="view_result.php"><i class="fas fa-link"></i>View Result</a>
             </li>
             <li>
-                <a href="#"><i class="fas fa-stream"></i>Notice</a>
+                <a href="shownews.php"><i class="fas fa-stream"></i>Show News</a>
             </li>
             <li>
-                <a href="#"><i class="fas fa-calendar"></i>Add News</a>
+                <a href="addnews.php"><i class="fas fa-calendar"></i>Add News</a>
             </li>
 
         </ul>

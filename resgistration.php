@@ -172,13 +172,15 @@
             <div class="input_field mb-0">
               <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
               <input type="text" name="email" id="email" placeholder="Email" required />
+              <p class="mt-0 errorp" id="eerror"></p>
             </div>
-            <p class="mt-0 errorp" id="eerror"></p>
+
             <div class="input_field mb-0">
               <span><i aria-hidden="true" class="fa fa-mobile"></i></span>
               <input type="text" name="phone" id="phone" placeholder="+88" required />
+              <p class="mt-0 errorp" id="merror"></p>
             </div>
-            <p class="mt-0 errorp" id="merror"></p>
+
             <div class="input_field mb-2 radio_option">
               <input type="radio" name="radiogroup1" id="rd1" value="Male" />
               <label for="rd1">Male</label>
@@ -188,13 +190,15 @@
             <div class="input_field mb-0">
               <span><i aria-hidden="true" class="fa fa-lock"></i></span>
               <input type="password" id="password" name="password" placeholder="Password" required />
+              <p class="mt-0 errorp" id="perror"></p>
             </div>
-            <p class="mt-0 errorp" id="perror"></p>
+
             <div class="input_field mb-0">
               <span><i aria-hidden="true" class="fa fa-lock"></i></span>
               <input type="password" id="cpassword" name="cpassword" placeholder="Re-type Password" required />
+              <p class="mt-0 errorp" id="cperror"></p>
             </div>
-            <p class="mt-0 errorp" id="cperror"></p>
+
 
             <input class="button" type="submit" value="Register" />
             <a href="login.php">Already Have an account?</a>

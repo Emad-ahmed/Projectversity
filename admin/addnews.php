@@ -46,10 +46,10 @@ session_start();
                 <a href="view_result.php"><i class="fas fa-link"></i>View Result</a>
             </li>
             <li>
-                <a href="#"><i class="fas fa-stream"></i>Notice</a>
+                <a href="shownews.php"><i class="fas fa-calendar"></i>Show News</a>
             </li>
             <li>
-                <a href="#"><i class="fas fa-calendar"></i>Add News</a>
+                <a href="addnews.php"><i class="fas fa-calendar"></i>Add News</a>
             </li>
 
         </ul>
@@ -57,17 +57,16 @@ session_start();
 
     <div class="container mt-5">
         <h1 class="text-center mt-5 mb-4">Add News</h1>
-        <form action="newsACtion.php" method="POST" class="w-50 m-auto" enctype="multipart/form-data">
+        <form action="newsAction.php" method="POST" class="w-50 m-auto" enctype="multipart/form-data">
             <div class="mb-3">
-                <label for="ptitle" class="form-label">News Title</label>
-                <input type="text" id="ptitle" name="ptitle" class="form-control">
-
+                <label for="ntitle" class="form-label">News Title</label>
+                <input type="text" id="ntitle" name="ntitle" class="form-control">
             </div>
             <div class="mb-3">
                 <label for="desc" class="form-label">All News</label>
                 <div class="form-floating">
-                    <textarea class="form-control" name="desc" placeholder="Description" id="floatingTextarea"></textarea>
-                    <label for="floatingTextarea">Description</label>
+                    <textarea class="form-control" name="desc" placeholder="write news here...." id="floatingTextarea"></textarea>
+                    <label for="floatingTextarea">write news here....</label>
                 </div>
 
             </div>

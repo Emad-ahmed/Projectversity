@@ -24,6 +24,11 @@ session_start();
             border: 1px solid black;
             text-align: center;
         }
+
+        td img {
+            width: 100px;
+            height: 100px;
+        }
     </style>
 </head>
 
@@ -56,19 +61,18 @@ session_start();
     </div>
 
     <div class="container mt-5">
-        <h1 class="text-center mb-3 mt-4">Student List</h1>
+        <h1 class="text-center mb-3 mt-4">Show News</h1>
         <div class="col-lg-12">
             <input class="form-control mb-3" type="text" name="" id="myInput" placeholder="Student Name" onkeyup="searchFun()" />
             <table class="table" id="myTable">
                 <thead>
                     <tr>
                         <th>Sno.</th>
-                        <th>Id No</th>
-                        <th>Student name</th>
-                        <th>Email</th>
-                        <th>Mobile</th>
+                        <th>Title</th>
+                        <th>Full News</th>
+                        <th>News Image</th>
+                        <th>Edit</th>
                         <th>Delete</th>
-
                     </tr>
                 </thead>
                 <tbody>
@@ -76,17 +80,17 @@ session_start();
 
                     include 'config.php';
 
-                    $alldata = mysqli_query($conn, "SELECT * FROM `user`");
+                    $alldata = mysqli_query($conn, "SELECT * FROM `news`");
 
                     while ($row = mysqli_fetch_array($alldata)) {
                         echo "<tr>
                     <td>$row[id]</td>
-                    <td>$row[student_id]</td>
-                    <td>$row[name]</td>
-                    <td>$row[email]</td>
-                    <td>$row[mobile]</td>
-                    <td><a href='deleteuser.php? id=$row[id]' class='btn btn-danger'>Delete</a></td>
-        
+                    <td>$row[title]</td>
+                    <td>$row[description]</td>
+                    <td><img src='$row[image]' alt=''></td>
+                    <td><a href='updatenews.php? id=$row[id]' class='btn btn-info'>Edit</a></td>
+                    <td><a href='deletenews.php? id=$row[id]' class='btn btn-danger'>Delete</a></td>
+                    
 
                     </tr>";
                     }
@@ -98,35 +102,9 @@ session_start();
 
 
 
-        <script>
-            const searchFun = () => {
-                let filter = document.getElementById("myInput").value.toUpperCase();
-
-                let myTable = document.getElementById("myTable");
-                let tr = myTable.getElementsByTagName("tr");
-
-                for (var i = 0; i < tr.length; i++) {
-                    let td = tr[i].getElementsByTagName("td")[2];
-
-                    if (td) {
-                        let textvalue = td.textContent || td.innerHTML;
-                        if (textvalue.toUpperCase().indexOf(filter) > -1) {
-                            tr[i].style.display = "";
-                        } else {
-                            tr[i].style.display = "none";
-                        }
-                    }
-                }
-            };
-        </script>
-    </div>
-    </div>
 
 
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
 </html>

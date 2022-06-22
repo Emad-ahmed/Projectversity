@@ -200,36 +200,25 @@ session_start();
     <div class="main">
         <h1 class="mtitle">Latest News</h1>
         <ul class="cards">
-            <li class="cards_item">
-                <div class="card">
-                    <div class="card_image"><img src="img/p3.JPG"></div>
-                    <div class="card_content">
-                        <h2 class="card_title">আইএবি’র অ‍্যাক্রেডিটেশন টীমের লিডিং ইউনিভার্সিটি পরিদর্শন</h2>
-                        <p class="card_text">স্থাপত্যবিভাগের আবেদনের প্রেক্ষিতে বাংলাদেশ স্থপতি ইনস্টিটিউটের (আইএবি) অ‍্যাক্রেডিটেশন টীম সিলেটের প্রথম বেসরকারি বিশ্ববিদ্যালয় লিডিং ইউনিভার্সিটির স্থাপত্য বিভাগ পরিদর্শন করেছেন।</p>
-                        <button class="btn card_btn">Read More</button>
-                    </div>
+            <?php
+
+            include 'config.php';
+
+            $alldata = mysqli_query($conn, "SELECT * FROM `news`");
+
+            while ($row = mysqli_fetch_array($alldata)) {
+                echo "    <li class='cards_item'>
+                <div class='card'>
+                <div class='card_image'><img src='admin/$row[image]'></div>
+                <div class='card_content'>
+                <h2 class='card_title'>$row[title]</h2>
+                <p class='card_text'>$row[description]</p>
+                <button class='btn card_btn'>Read More</button>
                 </div>
-            </li>
-            <li class="cards_item">
-                <div class="card">
-                    <div class="card_image"><img src="img/p1.JPG"></div>
-                    <div class="card_content">
-                        <h2 class="card_title">বিশ্বসেরা গবেষকের তালিকায় লিডিং ইউনিভার্সিটির উপাচার্য কাজী আজিজুল মাওলা</h2>
-                        <p class="card_text">আলপার ডজার (এডি) সায়েন্টিফিক ইনডেক্স র‍‍্যাংকিং- ২০২২ এ বিশ্বসেরা গবেষকদের তালিকায় স্থান পেয়েছেন লিডিং ইউনিভার্সিটির উপাচার্য ও বাংলাদেশ প্রকৌশল বিশ্ববিদ্যালয়ের প্রফেসর ড. কাজী আজিজুল মাওলা।</p>
-                        <button class="btn card_btn">Read More</button>
-                    </div>
                 </div>
-            </li>
-            <li class="cards_item">
-                <div class="card">
-                    <div class="card_image"><img src="img/p2.JPG"></div>
-                    <div class="card_content">
-                        <h2 class="card_title">ভাষা অলিম্পিয়াডে লিডিং ইউনিভার্সিটির শিক্ষার্থীদের অসাধারন সাফল্য অর্জন</h2>
-                        <p class="card_text">ভাষা অলিম্পিয়াডে লিডিং ইউনিভার্সিটির শিক্ষার্থীরা অসাধারণ সাফল্য অর্জন করেছে। শিক্ষার্থীরা ফাইনাল রাউন্ডে অসাধারণ সাফল্য অর্জন করেছে। </p>
-                        <button class="btn card_btn">Read More</button>
-                    </div>
-                </div>
-            </li>
+            </li>";
+            }
+            ?>
 
         </ul>
     </div>
