@@ -1,6 +1,13 @@
 <?php
+include 'config.php';
 
 session_start();
+
+$id = $_SESSION['student_id'];
+
+$datafetchquery = mysqli_query($conn, "SELECT * FROM `user` WHERE student_id = '$id'");
+$data = mysqli_fetch_array($datafetchquery);
+
 
 ?>
 <!doctype html>
@@ -20,6 +27,15 @@ session_start();
     <link rel="stylesheet" href="css/reg.css">
     <title>Home</title>
 </head>
+
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        text-align: center;
+    }
+</style>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -87,27 +103,28 @@ session_start();
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <?php
-
-                            if (isset($_SESSION['student_id'])) {
-                                echo '<li><a class="dropdown-item" href="result.php">Result</a></li>';
-                                echo '<li>
-                                <hr class="dropdown-divider">
-                            </li>';
-                            }
-
-                            ?>
-
-
-                            <li><a class="dropdown-item" href="">Semister Registration</a></li>
+                            <?php if (isset($_SESSION['student_id'])) {
+                                echo  '<li><a class="dropdown-item" href="result.php">Result</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Guide line for Tuition Fees Payment System</a></li>
+                            
+                            <li><a class="dropdown-item" href="">Semister Registration</a></li>
+                           
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
                             <li><a class="dropdown-item" href="#">Change Password</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            ';
+                            } ?>
+                            <li><a class="dropdown-item" href="#">Guide line for Tuition Fees Payment System</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -148,30 +165,85 @@ session_start();
             </div>
         </div>
     </nav>
-    <div class="form_wrapper mt-5">
-        <div class="form_container">
-            <div class="title_container">
-                <h2>Result</h2>
-            </div>
-            <div class="row clearfix">
-                <div class="">
-                    <form onsubmit="return formValidationStu()">
-                        <div class="input_field"> <span><i aria-hidden="true" class="fa fa-navicon"></i></span>
-                            <input type="text" id="id" name="id" placeholder="Student Id" required />
-                            <p class="mt-0 errorp" id="siderror"></p>
-                        </div>
-                        <div class="input_field"> <span><i aria-hidden="true" class="fa fa-calendar"></i></span>
-                            <input type="text" id="birth" name="date" placeholder="DD/MM/YYYY" required />
-                            <p class="mt-0 errorp" id="birerror"></p>
-                        </div>
 
-                        <input class="button" type="submit" value="Fetch Result" />
 
-                    </form>
-                </div>
-            </div>
+
+
+
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-3 mt-4 fw-bold">Result <?php echo $data['name'] ?></h1>
+        <div class="col-lg-12">
+            <input class="form-control mb-3" type="text" name="" id="myInput" placeholder="Course Name" onkeyup="searchFun()" />
+            <table class="table" id="myTable">
+                <thead>
+                    <tr>
+
+                        <th>Id No</th>
+                        <th>Student name</th>
+                        <th>Course Code</th>
+                        <th>Course Title</th>
+                        <th>Semister</th>
+                        <th>Point</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+
+                    include 'config.php';
+
+                    $myid = $_SESSION['student_id'];
+
+
+
+                    $alldata = mysqli_query($conn, "SELECT * FROM `result` WHERE student_id = '$myid'");
+
+                    while ($row = mysqli_fetch_array($alldata)) {
+                        echo "<tr>
+
+                    <td>$row[student_id]</td>
+                    <td>$row[student_name]</td>
+                    <td>$row[course_name]</td>
+                    <td>$row[course_code]</td>
+                    <td>$row[semister]</td>
+                    <td>$row[gpa]</td>
+                  
+
+                    </tr>";
+                    }
+
+                    ?>
+                </tbody>
+            </table>
         </div>
+
+
+
+        <script>
+            const searchFun = () => {
+                let filter = document.getElementById("myInput").value.toUpperCase();
+
+                let myTable = document.getElementById("myTable");
+                let tr = myTable.getElementsByTagName("tr");
+
+                for (var i = 0; i < tr.length; i++) {
+                    let td = tr[i].getElementsByTagName("td")[2];
+
+                    if (td) {
+                        let textvalue = td.textContent || td.innerHTML;
+                        if (textvalue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }
+            };
+        </script>
     </div>
+    </div>
+
 
     <script src="js/validationresult.js"></script>
     <div class="pg-footer">

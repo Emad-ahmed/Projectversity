@@ -14,6 +14,7 @@ if (mysqli_num_rows($_result)) {
     echo "<script>alert('Login Successfull')</script>";
     echo "<script>location.href = 'index.php'</script>";
 } elseif (($id_no == "admin12@gmail.com" && $pass == "12345") || ($id_no == "jahedul_islam_mony@gmail.com" && $pass == "12345")) {
+    $_SESSION['student_id'] = $id_no;
     echo "<script>location.href = 'admin/home.php'</script>";
 } else {
     echo "<script>alert('Incorrect Username Or Password')</script>";

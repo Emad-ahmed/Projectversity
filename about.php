@@ -36,7 +36,7 @@ session_start();
                         <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About Us</a>
+                        <a class="nav-link" href="about.php">About Us</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="index.php" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -92,19 +92,28 @@ session_start();
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="result.php">Result</a></li>
+                            <?php if (isset($_SESSION['student_id'])) {
+                                echo  '<li><a class="dropdown-item" href="result.php">Result</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Semister Registration</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Guide line for Tuition Fees Payment System</a></li>
+                            
+                            <li><a class="dropdown-item" href="">Semister Registration</a></li>
+                           
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
                             <li><a class="dropdown-item" href="#">Change Password</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            ';
+                            } ?>
+                            <li><a class="dropdown-item" href="#">Guide line for Tuition Fees Payment System</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -130,9 +139,7 @@ session_start();
                     <li class="nav-item">
                         <a class="nav-link" href="libary.php">Libary</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="admin/new.php">Admin</a>
-                    </li>
+
                 </ul>
                 <?php
 

@@ -4,7 +4,7 @@ function formValidationStu() {
 
 
 
-    var studentidpattern = /^[1-9]{8,15}$/;
+    var studentidpattern = /^[0-9]{8,15}$/;
     var birthdatePattern = /^(?:0[1-9]|[12]\d|3[01])([\/.-])(?:0[1-9]|1[012])\1(?:19|20)\d\d$/;
 
     if (studentidpattern.test(studentid)) {

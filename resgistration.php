@@ -93,23 +93,30 @@
               <li>
                 <hr class="dropdown-divider" />
               </li>
-              <li><a class="dropdown-item" href="result.php">Result</a></li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-              <li>
-                <a class="dropdown-item" href="">Semister Registration</a>
-              </li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
+              <?php if (isset($_SESSION['student_id'])) {
+                echo  '<li><a class="dropdown-item" href="result.php">Result</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            
+                            <li><a class="dropdown-item" href="">Semister Registration</a></li>
+                           
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Change Password</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            ';
+              } ?>
               <li>
                 <a class="dropdown-item" href="#">Guide line for Tuition Fees Payment System</a>
               </li>
               <li>
                 <hr class="dropdown-divider" />
               </li>
-              <li><a class="dropdown-item" href="#">Change Password</a></li>
+
               <li>
                 <hr class="dropdown-divider" />
               </li>

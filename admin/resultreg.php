@@ -15,6 +15,19 @@
   <link rel="stylesheet" href="css/reg.css" />
   <link rel="stylesheet" href="css/style.css" />
   <title>Home</title>
+
+  <style>
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    form {
+      background: #000;
+      padding: 2rem;
+      color: white;
+      border-radius: 1rem;
+    }
+  </style>
 </head>
 
 <body>
@@ -27,10 +40,13 @@
     <header>MY APP</header>
     <ul>
       <li>
-        <a href="#"><i class="fas fa-qrcode"></i>Dashboard</a>
+        <a href="home.php"><i class="fas fa-qrcode"></i>Dashboard</a>
       </li>
       <li>
-        <a href="resultreg.php"><i class="fas fa-link"></i>Result</a>
+        <a href="resultreg.php"><i class="fas fa-link"></i>Add Result</a>
+      </li>
+      <li>
+        <a href="view_result.php"><i class="fas fa-link"></i>View Result</a>
       </li>
       <li>
         <a href="#"><i class="fas fa-stream"></i>Notice</a>
@@ -41,33 +57,69 @@
 
     </ul>
   </div>
-  <div class="container">
-    <form class="w-50">
+  <div class="container mt-5">
+    <form action="resultaction.php" method="POST" class="w-50 m-auto">
       <div class="form-group">
         <label for="id_no">Student Id</label>
-        <input type="text" class="form-control" id="id_no" placeholder="Enter Id">
+        <input type="text" name="stu_id" class="form-control" id="id_no" placeholder="Enter Id">
       </div>
       <div class="form-group">
         <label for="name">Student Name</label>
-        <input type="text" class="form-control" id="name" placeholder="name">
+        <input type="text" name="stu_name" class="form-control" id="name" placeholder="name">
       </div>
       <div class="form-group">
-        <label for="name">Student Name</label>
+        <label for="name">Course Title</label>
         <div class="input-group mb-3">
 
-          <select class="custom-select form-control" id="inputGroupSelect01">
-            <option selected>Choose...</option>
+          <select class="custom-select form-control" id="inputGroupSelect01" name="course_title">
+            <option selected>Course Title</option>
             <option value="1">One</option>
             <option value="2">Two</option>
             <option value="3">Three</option>
           </select>
         </div>
       </div>
+      <div class="form-group">
+        <label for="name">Course Code</label>
+        <div class="input-group mb-3">
+
+          <select class="custom-select form-control" id="inputGroupSelect01" name="course_code">
+            <option selected>Course Code</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name">Semister</label>
+        <div class="input-group mb-3">
+
+          <select class="custom-select form-control" id="inputGroupSelect01" name="semister">
+            <option selected>1</option>
+            <option value="1">2</option>
+            <option value="2">3</option>
+            <option value="3">4</option>
+            <option value="1">5</option>
+            <option value="2">6</option>
+            <option value="3">7</option>
+            <option value="1">8</option>
+            <option value="2">9</option>
+            <option value="3">10</option>
+            <option value="2">11</option>
+            <option value="3">12</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="point">Point</label>
+        <input type="text" class="form-control" name="point" id="point" placeholder="Point">
+      </div>
       <div class="form-check">
         <input type="checkbox" class="form-check-input" id="exampleCheck1">
         <label class="form-check-label" for="exampleCheck1">Check me out</label>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-outline-light col-12 mt-3">Submit</button>
     </form>
   </div>
   <!-- Optional JavaScript; choose one of the two! -->

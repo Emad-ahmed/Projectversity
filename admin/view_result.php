@@ -1,9 +1,3 @@
-<?php
-
-session_start();
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,7 +50,7 @@ session_start();
     </div>
 
     <div class="container mt-5">
-        <h1 class="text-center mb-3 mt-4">Student List</h1>
+        <h1 class="text-center mb-3 mt-4">Result List</h1>
         <div class="col-lg-12">
             <input class="form-control mb-3" type="text" name="" id="myInput" placeholder="Student Name" onkeyup="searchFun()" />
             <table class="table" id="myTable">
@@ -65,10 +59,12 @@ session_start();
                         <th>Sno.</th>
                         <th>Id No</th>
                         <th>Student name</th>
-                        <th>Email</th>
-                        <th>Mobile</th>
+                        <th>Course Code</th>
+                        <th>Course Title</th>
+                        <th>Semister</th>
+                        <th>Point</th>
                         <th>Delete</th>
-
+                        <th>Edit</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -76,17 +72,19 @@ session_start();
 
                     include 'config.php';
 
-                    $alldata = mysqli_query($conn, "SELECT * FROM `user`");
+                    $alldata = mysqli_query($conn, "SELECT * FROM `result`");
 
                     while ($row = mysqli_fetch_array($alldata)) {
                         echo "<tr>
                     <td>$row[id]</td>
                     <td>$row[student_id]</td>
-                    <td>$row[name]</td>
-                    <td>$row[email]</td>
-                    <td>$row[mobile]</td>
-                    <td><a href='deleteuser.php? id=$row[id]' class='btn btn-danger'>Delete</a></td>
-        
+                    <td>$row[student_name]</td>
+                    <td>$row[course_name]</td>
+                    <td>$row[course_code]</td>
+                    <td>$row[semister]</td>
+                    <td>$row[gpa]</td>
+                    <td><a href='deleteresult.php? id=$row[id]' class='btn btn-danger'>Delete</a></td>
+                    <td><a href='updateresult.php? id=$row[id]' class='btn btn-info'>Edit</a></td>
 
                     </tr>";
                     }
