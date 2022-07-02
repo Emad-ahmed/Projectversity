@@ -10,25 +10,28 @@ $pass = $_POST['password'];
 $cpass = $_POST['cpassword'];
 
 $_name_pattern = "/^[a-zA-Z. ]+$/";
-$_idPattern = "/^[1-9]{5,15}$/";
+$_idPattern = "/^[0-9]{5,15}$/";
 $_mobile_pattern = "/^(\+88|88)?01[3-9]\d{8}$/";
 $_emailPattern = "/^[a-zA-Z0-9_-]{3,}@[a-zA-Z0-9_-]{3,}\.[a-zA-Z]{2,4}$/";
 $_password_pattern = "/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/";
 
 $_duplicate_email = mysqli_query($conn, "SELECT * FROM `user` WHERE email = '$email'");
 $_duplicate_id = mysqli_query($conn, "SELECT * FROM `user` WHERE student_id = '$id_no'");
-
+$_duplicate_mobile = mysqli_query($conn, "SELECT * FROM `user` WHERE mobile = '$phone'");
 if (mysqli_num_rows($_duplicate_email) > 0) {
     echo "<script>alert('Email Already Taken')</script>";
+    echo "<script>location.href = 'resgistration.php'</script>";
+} elseif (mysqli_num_rows($_duplicate_id) > 0) {
+    echo "<script>alert('Id Already Taken')</script>";
+    echo "<script>location.href = 'resgistration.php'</script>";
+} elseif (mysqli_num_rows($_duplicate_mobile) > 0) {
+    echo "<script>alert('Phone Number Already Taken')</script>";
     echo "<script>location.href = 'resgistration.php'</script>";
 } elseif (!preg_match($_name_pattern, $name)) {
     echo "<script>alert('Invalid Username')</script>";
     echo "<script>location.href = 'resgistration.php'</script>";
 } elseif (!preg_match($_idPattern, $id_no)) {
     echo "<script>alert('Invalid Id No')</script>";
-    echo "<script>location.href = 'resgistration.php'</script>";
-} elseif (mysqli_num_rows($_duplicate_id) > 0) {
-    echo "<script>alert('Student Id ALready Taken')</script>";
     echo "<script>location.href = 'resgistration.php'</script>";
 } elseif (!preg_match($_mobile_pattern, $phone)) {
     echo "<script>alert('Invalid Mobile Number')</script>";

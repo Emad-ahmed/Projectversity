@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+
+$view = $_SESSION['student_id'];
+
+
+if (!isset($view)) {
+  echo "<script>location.href = 'login.php'</script>";
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

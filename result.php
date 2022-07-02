@@ -1,11 +1,18 @@
 <?php
 include 'config.php';
 
+
 session_start();
 
-$id = $_SESSION['student_id'];
 
-$datafetchquery = mysqli_query($conn, "SELECT * FROM `user` WHERE student_id = '$id'");
+$view = $_SESSION['student_id'];
+
+
+if (!isset($view)) {
+    echo "<script>location.href = 'login.php'</script>";
+}
+
+$datafetchquery = mysqli_query($conn, "SELECT * FROM `user` WHERE student_id = '$view'");
 $data = mysqli_fetch_array($datafetchquery);
 
 
@@ -180,7 +187,7 @@ $data = mysqli_fetch_array($datafetchquery);
                     <tr>
 
                         <th>Id No</th>
-                        <th>Student name</th>
+
                         <th>Course Code</th>
                         <th>Course Title</th>
                         <th>Semister</th>
@@ -196,14 +203,13 @@ $data = mysqli_fetch_array($datafetchquery);
                     $myid = $_SESSION['student_id'];
 
 
-
                     $alldata = mysqli_query($conn, "SELECT * FROM `result` WHERE student_id = '$myid'");
 
                     while ($row = mysqli_fetch_array($alldata)) {
                         echo "<tr>
 
                     <td>$row[student_id]</td>
-                    <td>$row[student_name]</td>
+
                     <td>$row[course_name]</td>
                     <td>$row[course_code]</td>
                     <td>$row[semister]</td>
@@ -228,7 +234,7 @@ $data = mysqli_fetch_array($datafetchquery);
                 let tr = myTable.getElementsByTagName("tr");
 
                 for (var i = 0; i < tr.length; i++) {
-                    let td = tr[i].getElementsByTagName("td")[2];
+                    let td = tr[i].getElementsByTagName("td")[1];
 
                     if (td) {
                         let textvalue = td.textContent || td.innerHTML;

@@ -1,8 +1,28 @@
 <?php
 
+
+
+include 'config.php';
+
+
 session_start();
 
+$view = $_SESSION['student_id'];
+
+
+if (!isset($view)) {
+    echo "<script>location.href = 'login.php'</script>";
+}
+
+$id = $_GET['id'];
+
+$datafetchquery = mysqli_query($conn, "SELECT * FROM `news` WHERE id = '$id'");
+
+$data = mysqli_fetch_array($datafetchquery);
+
+
 ?>
+
 <!doctype html>
 <html lang="en">
 
@@ -13,25 +33,28 @@ session_start();
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/reg.css">
     <title>Home</title>
+
+    <style>
+
+    </style>
+
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="" class="logopng"></a>
+            <a class="navbar-brand" href="index.php"><img src="img/logo.png" alt="" class="logopng"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.php">Home</a>
+                        <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.php">About Us</a>
@@ -41,11 +64,14 @@ session_start();
                             Faculty Members
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
                             <li><a class="dropdown-item" href="bba.php">Department Business Administration</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="cse.php">Department Of CSE</a></li>
+                            <li><a class="dropdown-item" href="cse.html">Department Of CSE</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -77,10 +103,10 @@ session_start();
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="admission.php">Admission</a>
+                        <a class="nav-link" href="admission.html">Admission</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="index.php" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Student Portal
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -134,8 +160,15 @@ session_start();
                     <li class="nav-item">
                         <a class="nav-link" href="libary.php">Libary</a>
                     </li>
-
                 </ul>
+
+                <?php
+
+
+
+                ?>
+
+
                 <?php
 
                 if (isset($_SESSION['student_id'])) {
@@ -146,41 +179,28 @@ session_start();
 
 
                 ?>
+
+
+
+
+
+
+
             </div>
         </div>
     </nav>
 
 
-    <div class="form_wrapper mt-5">
-        <div class="form_container">
-            <div class="title_container">
-                <h2>Login Form</h2>
-            </div>
-            <div class="row clearfix">
-                <div class="">
 
-                    <form action="loginAction.php" method="POST">
-                        <div class="input_field"> <span><i aria-hidden="true" class="fa fa-id-badge"></i></span>
-                            <input type="text" name="id_no" id="id_no" placeholder="Id No" required />
-                        </div>
-                        <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                            <input type="password" name="password" placeholder="Password" required />
-                        </div>
+    <div class="text-center border w-75 m-auto mt-4">
 
-                        <input class="button" type="submit" value="login" />
-                        <div>
-                            <a href="resgistration.php">Create new account</a>
-                            <a href="forgot.html" class="forgot">Forgot Password</a>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+        <img src="admin/<?php echo $data['image'] ?>" alt="" class="img-fluid w-25 img-thumbnail border-rounded mt-4 mb-3">
+        <h1 class="fw-bold border w-25 m-auto p-2"><?php echo $data['title'] ?></h1>
+        <p><?php echo $data['description'] ?></p>
     </div>
 
 
-
-    <div class="pg-footer">
+    <div class="pg-footer mt-5">
         <footer class="footer">
             <svg class="footer-wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
                 <path class="footer-wave-path" d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z"></path>
@@ -291,6 +311,8 @@ session_start();
             </div>
         </footer>
     </div>
+
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

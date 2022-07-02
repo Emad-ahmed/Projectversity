@@ -2,6 +2,9 @@
 
 session_start();
 
+
+
+
 ?>
 
 <!doctype html>
@@ -84,7 +87,7 @@ session_start();
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="admission.html">Admission</a>
+                        <a class="nav-link" href="admission.php">Admission</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -143,7 +146,11 @@ session_start();
                     </li>
                 </ul>
 
+                <?php
 
+
+
+                ?>
 
 
                 <?php
@@ -213,7 +220,7 @@ session_start();
                 <div class='card_content'>
                 <h2 class='card_title'>$row[title]</h2>
                 <p class='card_text'>$row[description]</p>
-                <button class='btn card_btn'>Read More</button>
+                <a href='newsshow.php? id=$row[id]' class='btn card_btn'>Read More</a>
                 </div>
                 </div>
             </li>";

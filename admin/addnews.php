@@ -2,6 +2,15 @@
 
 session_start();
 
+
+
+$view = $_SESSION['student_id'];
+
+
+if (!isset($view)) {
+    echo "<script>location.href = 'login.php'</script>";
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -51,6 +60,9 @@ session_start();
             <li>
                 <a href="addnews.php"><i class="fas fa-calendar"></i>Add News</a>
             </li>
+            <li>
+                <a href="../index.php"><i class="fas fa-calendar"></i>Main Home</a>
+            </li>
 
         </ul>
     </div>
@@ -65,7 +77,8 @@ session_start();
             <div class="mb-3">
                 <label for="desc" class="form-label">All News</label>
                 <div class="form-floating">
-                    <textarea class="form-control" name="desc" placeholder="write news here...." id="floatingTextarea"></textarea>
+                    <input type="text" class="form-control" name="desc" placeholder="write news here...." id="floatingTextarea"></input>
+
                     <label for="floatingTextarea">write news here....</label>
                 </div>
 

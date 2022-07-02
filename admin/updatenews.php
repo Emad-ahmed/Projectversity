@@ -1,8 +1,8 @@
 <?php
 
+include 'config.php';
+
 session_start();
-
-
 
 
 $view = $_SESSION['student_id'];
@@ -11,6 +11,13 @@ $view = $_SESSION['student_id'];
 if (!isset($view)) {
     echo "<script>location.href = 'login.php'</script>";
 }
+
+$id = $_GET['id'];
+
+$datafetchquery = mysqli_query($conn, "SELECT * FROM `news` WHERE id = '$id'");
+
+$data = mysqli_fetch_array($datafetchquery);
+
 
 ?>
 
@@ -35,9 +42,8 @@ if (!isset($view)) {
             text-align: center;
         }
 
-        td img {
+        img {
             width: 100px;
-            height: 100px;
         }
     </style>
 </head>
@@ -61,7 +67,7 @@ if (!isset($view)) {
                 <a href="view_result.php"><i class="fas fa-link"></i>View Result</a>
             </li>
             <li>
-                <a href="shownews.php"><i class="fas fa-stream"></i>Show News</a>
+                <a href="shownews.php"><i class="fas fa-calendar"></i>Show News</a>
             </li>
             <li>
                 <a href="addnews.php"><i class="fas fa-calendar"></i>Add News</a>
@@ -69,52 +75,46 @@ if (!isset($view)) {
             <li>
                 <a href="../index.php"><i class="fas fa-calendar"></i>Main Home</a>
             </li>
+
         </ul>
     </div>
 
     <div class="container mt-5">
-        <h1 class="text-center mb-3 mt-4">Show News</h1>
-        <div class="col-lg-12">
-            <input class="form-control mb-3" type="text" name="" id="myInput" placeholder="Student Name" onkeyup="searchFun()" />
-            <table class="table" id="myTable">
-                <thead>
-                    <tr>
-                        <th>Sno.</th>
-                        <th>Title</th>
-                        <th>Full News</th>
-                        <th>News Image</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
+        <h1 class="text-center mt-5 mb-4">Add News</h1>
+        <form action="updatenewsAction.php" id="form" method="POST" class="w-50 m-auto" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="ntitle" class="form-label">News Title</label>
+                <input type="text" id="ntitle" name="ntitle" value="<?php echo $data['title'] ?>" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="desc" class="form-label">All News</label>
+                <div class="form-floating">
+                    <input type="text" value="<?php echo $data['description'] ?>" onkeyup="searchFun()" class="form-control" name="desc" placeholder="write news here...." id="floatingTextarea"></input>
 
-                    include 'config.php';
+                </div>
 
-                    $alldata = mysqli_query($conn, "SELECT * FROM `news`");
+            </div>
 
-                    while ($row = mysqli_fetch_array($alldata)) {
-                        echo "<tr>
-                    <td>$row[id]</td>
-                    <td>$row[title]</td>
-                    <td>$row[description]</td>
-                    <td><img src='$row[image]' alt=''></td>
-                    <td><a href='updatenews.php? id=$row[id]' class='btn btn-info'>Edit</a></td>
-                    <td><a href='deletenews.php? id=$row[id]' class='btn btn-danger'>Delete</a></td>
-                    </tr>";
-                    }
 
-                    ?>
-                </tbody>
-            </table>
-        </div>
+
+            <div class="mb-3">
+                <label for="nimg" class="form-label">Image</label>
+                <input type="file" name="nimg" class="form-control" accept="image/*">
+            </div>
+
+            <div><img src="<?php echo $data['image'] ?>" /></div>
+
+            <input type="hidden" name="id" value="<?php echo $data['id'] ?>">
+            <button type="submit" class="btn btn-primary">Update News</button>
+        </form>
+    </div>
 
 
 
 
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

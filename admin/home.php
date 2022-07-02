@@ -2,6 +2,15 @@
 
 session_start();
 
+
+$view = $_SESSION['student_id'];
+
+
+if (!isset($view)) {
+    echo "<script>location.href = 'login.php'</script>";
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +60,9 @@ session_start();
             <li>
                 <a href="addnews.php"><i class="fas fa-calendar"></i>Add News</a>
             </li>
-
+            <li>
+                <a href="../index.php"><i class="fas fa-calendar"></i>Main Home</a>
+            </li>
         </ul>
     </div>
 
@@ -95,6 +106,8 @@ session_start();
                 </tbody>
             </table>
         </div>
+
+
 
 
 

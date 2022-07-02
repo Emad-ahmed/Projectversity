@@ -2,6 +2,16 @@
 
 include 'config.php';
 
+session_start();
+
+
+$view = $_SESSION['student_id'];
+
+
+if (!isset($view)) {
+    echo "<script>location.href = 'login.php'</script>";
+}
+
 $id = $_GET['id'];
 
 $datafetchquery = mysqli_query($conn, "SELECT * FROM `result` WHERE id = '$id'");
@@ -66,7 +76,9 @@ $data = mysqli_fetch_array($datafetchquery);
             <li>
                 <a href="addnews.php"><i class="fas fa-calendar"></i>Add News</a>
             </li>
-
+            <li>
+                <a href="../index.php"><i class="fas fa-calendar"></i>Main Home</a>
+            </li>
         </ul>
     </div>
     <div class="container mt-5">
