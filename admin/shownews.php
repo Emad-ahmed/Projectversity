@@ -5,7 +5,7 @@ session_start();
 
 
 
-$view = $_SESSION['student_id'];
+$view = $_SESSION['admin'];
 
 
 if (!isset($view)) {
@@ -49,7 +49,7 @@ if (!isset($view)) {
         <i class="fas fa-times" id="cancel"></i>
     </label>
     <div class="sidebar">
-        <header>MY APP</header>
+        <header>Admin</header>
         <ul>
             <li>
                 <a href="home.php"><i class="fas fa-qrcode"></i>Dashboard</a>

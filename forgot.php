@@ -159,7 +159,7 @@ session_start();
             </div>
             <div class="row clearfix">
                 <div class="">
-                    <form>
+                    <form action="forgotAction.php" method="POST">
                         <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
                             <input type="email" name="email" placeholder="Email" required />
                         </div>

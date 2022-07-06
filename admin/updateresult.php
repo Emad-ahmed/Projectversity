@@ -59,7 +59,7 @@ $data = mysqli_fetch_array($datafetchquery);
         <i class="fas fa-times" id="cancel"></i>
     </label>
     <div class="sidebar">
-        <header>MY APP</header>
+        <header>Admin</header>
         <ul>
             <li>
                 <a href="home.php"><i class="fas fa-qrcode"></i>Dashboard</a>

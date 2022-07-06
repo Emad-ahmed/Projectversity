@@ -115,3 +115,7 @@ section
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; 
 }
+
+a{
+    text-decoration: none;
+}

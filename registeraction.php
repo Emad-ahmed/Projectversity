@@ -6,8 +6,9 @@ $id_no = $_POST['id_no'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
 $radiogroup = $_POST['radiogroup1'];
-$pass = $_POST['password'];
-$cpass = $_POST['cpassword'];
+$pass = md5($_POST['password']);
+$cpass = md5($_POST['cpassword']);
+
 
 $_name_pattern = "/^[a-zA-Z. ]+$/";
 $_idPattern = "/^[0-9]{5,15}$/";
@@ -38,9 +39,6 @@ if (mysqli_num_rows($_duplicate_email) > 0) {
     echo "<script>location.href = 'resgistration.php'</script>";
 } elseif (!preg_match($_emailPattern, $email)) {
     echo "<script>alert('Invalid Email')</script>";
-    echo "<script>location.href = 'resgistration.php'</script>";
-} elseif (!preg_match($_password_pattern, $pass)) {
-    echo "<script>alert('Invalid Password')</script>";
     echo "<script>location.href = 'resgistration.php'</script>";
 } elseif ($pass !== $cpass) {
     echo "<script>alert('Password Not Match')</script>";
