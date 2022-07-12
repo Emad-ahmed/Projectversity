@@ -141,10 +141,7 @@ $data = mysqli_fetch_array($datafetchquery);
                 <label for="point">Point</label>
                 <input type="text" value="<?php echo $data['gpa'] ?>" class="form-control" name="point" id="point" placeholder="Point">
             </div>
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
+
             <input type="hidden" name="id" value="<?php echo $data['id'] ?>">
             <button type="submit" class="btn btn-outline-light col-12 mt-3">Submit</button>
         </form>

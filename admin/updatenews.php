@@ -99,7 +99,7 @@ $data = mysqli_fetch_array($datafetchquery);
 
             <div class="mb-3">
                 <label for="nimg" class="form-label">Image</label>
-                <input type="file" name="image" value="<?php echo $data['image'] ?>" class="form-control">
+                <input type="file" id="fileupload" name="image" value="<?php echo $data['image'] ?>" class="form-control">
             </div>
 
             <div>
@@ -108,7 +108,7 @@ $data = mysqli_fetch_array($datafetchquery);
 
 
             <div>
-                <img src="<?php echo $data['image'] ?>" alt="Image" width="100px">
+                <img src="<?php echo $data['image'] ?>" id="upload-img" class="mb-3" alt="Image" width="100px">
                 <input type="hidden" name="id" value="<?php echo $data['id'] ?>">
             </div>
             <button type="submit" class="btn btn-primary">Update News</button>
@@ -117,7 +117,16 @@ $data = mysqli_fetch_array($datafetchquery);
 
 
 
-
+    <script src="js/jquery-latest.min.js"></script>
+    <script>
+        $(function() {
+            $("#fileupload").change(function(event) {
+                var x = URL.createObjectURL(event.target.files[0]);
+                $("#upload-img").attr("src", x);
+                console.log(event);
+            });
+        })
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>

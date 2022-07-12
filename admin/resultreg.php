@@ -67,6 +67,9 @@ if (!isset($view)) {
       <li>
         <a href="addnews.php"><i class="fas fa-calendar"></i>Add News</a>
       </li>
+      <li>
+        <a href="../index.php"><i class="fas fa-calendar"></i>Main Home</a>
+      </li>
 
     </ul>
   </div>

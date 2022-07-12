@@ -6,6 +6,7 @@ $PASSWORD = "";
 $DB_NAME  = "finalproject";
 
 
+
 $conn = mysqli_connect($SERVERNAME, $USERNAME, $PASSWORD, $DB_NAME);
 
 if (!$conn) {
