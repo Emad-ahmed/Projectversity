@@ -74,10 +74,9 @@ h1 {
 }
 
 .mtitle {
-  width: 20rem;
-  margin: auto;
-  border-bottom: 1px solid black;
-  padding-bottom: 10px;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  font-weight: bolder;
 }
 
 .card-body .card-title {

@@ -1,24 +1,34 @@
 <?php
 include 'config.php';
-
 $id = $_POST['id'];
+
 
 $title = $_POST['ntitle'];
 $description = $_POST['desc'];
-$image = $_FILES['nimg'];
+$image = $_FILES['image'];
+$oldImage = $_POST['oldImage'];
 
 
 $imageLocation = $image['tmp_name'];
 $imageName = $image['name'];
-
-$imageDes = 'newsImage/' . $imageName;
-
+$imageDes = "newsImage/" . $imageName;
 
 
-move_uploaded_file($imageLocation, $imageDes);
+if (strlen($imageDes) > 10) {
+    $updateQuery = "UPDATE `news` SET `title`='$title',`description`='$description',`image`='$imageDes' WHERE id = '$id'";
+    move_uploaded_file($imageLocation, $imageDes);
+} else {
+
+    $updateQuery = "UPDATE `news` SET `title`='$title',`description`='$description',`image`='$oldImage' WHERE id = '$id'";
+    move_uploaded_file($imageLocation, $oldImage);
+}
 
 
+if (!mysqli_query($conn, $updateQuery)) {
 
-$updatequery = mysqli_query($conn, "UPDATE `news` SET `title`='$title',`description`='$description',`image`='$imageDes' WHERE id = '$id'");
-echo "<script>alert('Successfully Updated Newws')</script>";
-echo "<script>location.href = 'shownews.php'</script>";
+    die("Not updated!");
+} else {
+
+    echo "<script>alert('Data updated!!')</script>";
+    echo "<script>location.href='shownews.php'</script>";
+}

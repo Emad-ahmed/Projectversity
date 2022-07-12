@@ -7,12 +7,7 @@ include 'config.php';
 
 session_start();
 
-$view = $_SESSION['student_id'];
 
-
-if (!isset($view)) {
-    echo "<script>location.href = 'login.php'</script>";
-}
 
 $id = $_GET['id'];
 
@@ -194,9 +189,9 @@ $data = mysqli_fetch_array($datafetchquery);
 
     <div class="text-center border w-75 m-auto mt-4">
 
-        <img src="admin/<?php echo $data['image'] ?>" alt="" class="img-fluid w-25 img-thumbnail border-rounded mt-4 mb-3">
-        <h1 class="fw-bold border w-25 m-auto p-2"><?php echo $data['title'] ?></h1>
-        <p><?php echo $data['description'] ?></p>
+        <img src="admin/<?php echo $data['image'] ?>" alt="" class="img-fluid w-75 img-thumbnail border-rounded mt-4 mb-3">
+        <h1 class="fw-bold border  m-auto mb-4 p-2"><?php echo $data['title'] ?></h1>
+        <p class="text-justify"><?php echo $data['description'] ?></p>
     </div>
 
 

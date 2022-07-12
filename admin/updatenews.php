@@ -5,7 +5,7 @@ include 'config.php';
 session_start();
 
 
-$view = $_SESSION['student_id'];
+$view = $_SESSION['admin'];
 
 
 if (!isset($view)) {
@@ -89,7 +89,7 @@ $data = mysqli_fetch_array($datafetchquery);
             <div class="mb-3">
                 <label for="desc" class="form-label">All News</label>
                 <div class="form-floating">
-                    <input type="text" value="<?php echo $data['description'] ?>" onkeyup="searchFun()" class="form-control" name="desc" placeholder="write news here...." id="floatingTextarea"></input>
+                    <input type="text" value="<?php echo $data['description'] ?>" class="form-control" name="desc" placeholder="write news here...." id="floatingTextarea"></input>
 
                 </div>
 
@@ -99,12 +99,18 @@ $data = mysqli_fetch_array($datafetchquery);
 
             <div class="mb-3">
                 <label for="nimg" class="form-label">Image</label>
-                <input type="file" name="nimg" class="form-control" accept="image/*">
+                <input type="file" name="image" value="<?php echo $data['image'] ?>" class="form-control">
             </div>
 
-            <div><img src="<?php echo $data['image'] ?>" /></div>
+            <div>
+                <input type="text" name="oldImage" value="<?php echo $data['image'] ?>" class="form-control" hidden>
+            </div>
 
-            <input type="hidden" name="id" value="<?php echo $data['id'] ?>">
+
+            <div>
+                <img src="<?php echo $data['image'] ?>" alt="Image" width="100px">
+                <input type="hidden" name="id" value="<?php echo $data['id'] ?>">
+            </div>
             <button type="submit" class="btn btn-primary">Update News</button>
         </form>
     </div>
