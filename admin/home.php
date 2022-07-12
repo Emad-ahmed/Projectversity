@@ -68,7 +68,7 @@ if (!isset($view)) {
 
     <div class="container mt-5">
         <h1 class="text-center mb-3 mt-4">Student List</h1>
-        <div class="col-lg-12">
+        <div style="overflow-x:auto;">
             <input class="form-control mb-3" type="text" name="" id="myInput" placeholder="Student Name" onkeyup="searchFun()" />
             <table class="table" id="myTable">
                 <thead>

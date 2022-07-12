@@ -5,7 +5,7 @@ include 'config.php';
 session_start();
 
 
-$view = $_SESSION['student_id'];
+$view = $_SESSION['admin'];
 
 
 if (!isset($view)) {
@@ -83,7 +83,7 @@ $data = mysqli_fetch_array($datafetchquery);
     </div>
     <div class="container mt-5">
         <h1 class="text-center ">Update Result</h1>
-        <form action="upadateactionresult.php" method="POST" class="w-50 m-auto">
+        <form action="upadateactionresult.php" method="POST" class="formview mt-1">
 
             <div class="form-group">
                 <label for="id_no">Student Id</label>

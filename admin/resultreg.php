@@ -71,7 +71,7 @@ if (!isset($view)) {
     </ul>
   </div>
   <div class="container mt-5">
-    <form action="resultaction.php" method="POST" class="w-50 m-auto">
+    <form action="resultaction.php" method="POST" class="formview">
       <div class="form-group">
         <label for="id_no">Student Id</label>
         <input type="text" name="stu_id" class="form-control" id="id_no" placeholder="Enter Id">

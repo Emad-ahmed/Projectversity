@@ -11,6 +11,12 @@ $grey:#cccccc;
     }
 }
 
+.formview
+{
+    width: 50%;
+    margin: auto;
+}
+
 .form_wrapper {
     background: #fff;
     width: 500px;
@@ -382,6 +388,13 @@ $grey:#cccccc;
             float: none;
         }
     }
+    .formview
+{
+    width: 100%;
+    margin: auto;
+    margin-top: 5rem;
+}
+
     .bottom_row {
         .col_half {
             width: 50%;
