@@ -19,7 +19,12 @@ session_start();
     <link rel="stylesheet" href="css/about.css">
     <title>Home</title>
     <style>
+        .active {
 
+            background: #004658 !important;
+            border-radius: 6px;
+            color: white !important;
+        }
     </style>
 </head>
 
@@ -33,10 +38,10 @@ session_start();
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                        <a class="nav-link" aria-current="page" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.php">About Us</a>
+                        <a class="nav-link active" href="about.php">About Us</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="index.php" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
