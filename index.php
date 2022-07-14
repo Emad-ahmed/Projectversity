@@ -224,7 +224,7 @@ session_start();
                 <div class='card_image'><img src='admin/$row[image]'></div>
                 <div class='card_content'>
                 <h2 class='card_title mb-3'>$row[title]........</h2>
-               
+    
                 <a href='newsshow.php? id=$row[id]' class='btn card_btn'>Read More</a>
                 </div>
                 </div>

@@ -19,7 +19,7 @@ session_start();
     <link rel="stylesheet" href="css/about.css">
     <title>Home</title>
     <style>
-        .active {
+        .active{
 
             background: #004658 !important;
             border-radius: 6px;

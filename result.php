@@ -42,6 +42,13 @@ $data = mysqli_fetch_array($datafetchquery);
         border: 1px solid black;
         text-align: center;
     }
+
+    .active {
+
+        background: #004658 !important;
+        border-radius: 6px;
+        color: white !important;
+    }
 </style>
 
 <body>
@@ -111,7 +118,7 @@ $data = mysqli_fetch_array($datafetchquery);
                                 <hr class="dropdown-divider">
                             </li>
                             <?php if (isset($_SESSION['student_id'])) {
-                                echo  '<li><a class="dropdown-item" href="result.php">Result</a></li>
+                                echo  '<li><a class="dropdown-item active" href="result.php">Result</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
