@@ -1,8 +1,23 @@
 <?php
 
+
+
+include 'config.php';
+
+
 session_start();
 
+
+
+$id = $_GET['id'];
+
+$datafetchquery = mysqli_query($conn, "SELECT * FROM `teacher` WHERE id = '$id'");
+
+$data = mysqli_fetch_array($datafetchquery);
+
+
 ?>
+
 <!doctype html>
 <html lang="en">
 
@@ -16,16 +31,12 @@ session_start();
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/reg.css">
-    <link rel="stylesheet" href="css/bba.css">
     <title>Home</title>
-    <style>
-        .active {
 
-            background: #004658 !important;
-            border-radius: 6px;
-            color: white !important;
-        }
+    <style>
+
     </style>
+
 </head>
 
 <body>
@@ -38,7 +49,7 @@ session_start();
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.php">Home</a>
+                        <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.php">About Us</a>
@@ -51,11 +62,11 @@ session_start();
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item active" href="bba.php">Department Business Administration</a></li>
+                            <li><a class="dropdown-item" href="bba.php">Department Business Administration</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="cse.php">Department Of CSE</a></li>
+                            <li><a class="dropdown-item" href="cse.html">Department Of CSE</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -87,10 +98,10 @@ session_start();
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="admission.php">Admission</a>
+                        <a class="nav-link" href="admission.html">Admission</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="index.php" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Student Portal
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -142,9 +153,17 @@ session_start();
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="libary.html">Libary</a>
+                        <a class="nav-link" href="libary.php">Libary</a>
                     </li>
                 </ul>
+
+                <?php
+
+
+
+                ?>
+
+
                 <?php
 
                 if (isset($_SESSION['student_id'])) {
@@ -155,40 +174,45 @@ session_start();
 
 
                 ?>
+
+
+
+
+
+
+
             </div>
         </div>
     </nav>
 
 
-    <h1 class="text-center border-bottom pb-4 mt-4">Faculty Members of Business Administration</h1>
 
     <div class="container mt-5">
-        <div class="row m-auto">
-            <?php
-
-            include 'config.php';
-
-            $alldata = mysqli_query($conn, "SELECT * FROM `teacher` WHERE department='BBA'");
-
-            while ($row = mysqli_fetch_array($alldata)) {
-                echo "<div class='col-lg-4'>
-    <div class='card text-center mb-4' style='width: 22rem; height: 28rem;'>
-        <img src='admin//$row[image]' class='card-img-top' alt='...' style='height: 15rem; width:15rem; object-fit: cover; margin: auto;'>
-        <div class='card-body text-center'>
-            <h5 class='card-title'>
-            $row[name]</h5>
-            <p class='card-text'>$row[designation]</p>
-            <p class='card-text'>Bachelor of Business Administration</p>
-            <div class='text-center'>
-                <a href='showteacherinfo.php? id=$row[id]' class='btn'>See all Information</a>
+        <div class="row">
+            <div class="col-lg-2"><img src="admin/<?php echo $data['image'] ?>" alt="" class="w-100" class="img-thumbnail"></div>
+            <div class="col-lg-6 mt-3">
+                <h4><?php echo $data['name'] ?></h4>
+                <p><?php echo $data['designation'] ?></p>
+                <p><?php echo $data['department'] ?></p>
+            </div>
+            <div class="col-lg-4 mt-3">
+                <h4 class="mb-3">Contact Information</h4>
+                <p>Mobile: <?php echo $data['mobile'] ?></p>
+                <p>Email: <?php echo $data['email'] ?></p>
             </div>
         </div>
+
     </div>
-</div>";
-            }
-            ?>
-        </div>
+
+    <div class="container mt-5">
+        <h3 class="fw-bold">Area Of Study</h3>
+        <h6 class="border-bottom w-25 mt-3">Education</h6>
+        <p><?php echo $data['areaofstudy'] ?></p>
+        <h6 class="border-bottom w-25 mt-5">Biography</h6>
+        <p><?php echo $data['biography'] ?></p>
     </div>
+
+
 
     <div class="pg-footer mt-5">
         <footer class="footer">
@@ -301,6 +325,7 @@ session_start();
             </div>
         </footer>
     </div>
+
 
     <!-- Optional JavaScript; choose one of the two! -->
 

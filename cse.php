@@ -163,50 +163,30 @@ session_start();
 
     <div class="container mt-5">
         <div class="row m-auto">
-            <div class="col-lg-4">
-                <div class="card mb-4" style="width: 22rem; height: 28rem;">
-                    <img src="img/mony.JPG" class="card-img-top" alt="..." style="height: 15rem; width:15rem; object-fit: cover; margin: auto;">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">
-                            Md. Jehadul Islam Mony</h5>
-                        <p class="card-text">Lecturer</p>
-                        <p class="card-text">Computer Science & Engineering</p>
-                        <div class="text-center">
-                            <a href="" class="btn">See all Information</a>
+            <?php
+
+            include 'config.php';
+
+            $alldata = mysqli_query($conn, "SELECT * FROM `teacher` WHERE department='CSE'");
+
+            while ($row = mysqli_fetch_array($alldata)) {
+                echo "<div class='col-lg-4'>
+                <div class='card mb-4' style='width: 22rem; height: 28rem;'>
+                    <img src='admin//$row[image]' class='card-img-top' alt='...' style='height: 15rem; width:15rem; object-fit: cover; margin: auto;'>
+                    <div class='card-body text-center'>
+                        <h5 class='card-title'>
+                        $row[name]</h5>
+                        <p class='card-text'>$row[designation]</p>
+                        <p class='card-text'>Computer Science & Engineering</p>
+                        <div class='text-center'>
+                            <a href='showteacherinfo.php? id=$row[id]' class='btn'>See all Information</a>
                         </div>
                     </div>
-
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card mb-4" style="width: 22rem; height: 28rem;">
-                    <img src="img/faruk.JPG" class="card-img-top" alt="..." style="height: 15rem; width:15rem; object-fit: cover; margin: auto;">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">
-                            Prof. Dr. AS. Sikder</h5>
-                        <p class="card-text">Professor</p>
-                        <p class="card-text">Computer Science & Engineering</p>
-                        <div class="text-center">
-                            <a href="" class="btn">See all Information</a>
-                        </div>
-                    </div>
+            </div>";
+            }
+            ?>
 
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card" style="width: 22rem; height: 28rem;">
-                    <img src="img/shafkat.JPG" class="card-img-top" alt="..." style="height: 15rem; width:15rem; object-fit: cover; margin: auto;">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Shafkat Kibria</h5>
-                        <p class="card-text">Assistant Professor</p>
-                        <p class="card-text">Computer Science & Engineering</p>
-                        <div class="text-center">
-                            <a href="" class="btn">See all Information</a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
         </div>
     </div>
 

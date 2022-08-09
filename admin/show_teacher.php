@@ -1,8 +1,5 @@
 <?php
-
 session_start();
-
-
 
 
 $view = $_SESSION['admin'];
@@ -79,18 +76,22 @@ if (!isset($view)) {
     </div>
 
     <div class="container mt-5">
-        <h1 class="text-center mb-3 mt-4">Show News</h1>
+        <h1 class="text-center mb-3 mt-4">Teacher List</h1>
         <div style="overflow-x:auto;">
             <input class="form-control mb-3" type="text" name="" id="myInput" placeholder="Student Name" onkeyup="searchFun()" />
             <table class="table" id="myTable">
                 <thead>
                     <tr>
                         <th>Sno.</th>
-                        <th>Title</th>
-                        <th>Full News</th>
-                        <th>News Image</th>
-                        <th>Edit</th>
+                        <th>Name</th>
+                        <th>Designation</th>
+                        <th>Department</th>
+                        <th>Mobile</th>
+                        <th>Email</th>
+
+                        <th>Image</th>
                         <th>Delete</th>
+                        <th>Edit</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -98,16 +99,22 @@ if (!isset($view)) {
 
                     include 'config.php';
 
-                    $alldata = mysqli_query($conn, "SELECT * FROM `news`");
+                    $alldata = mysqli_query($conn, "SELECT * FROM `teacher`");
 
                     while ($row = mysqli_fetch_array($alldata)) {
                         echo "<tr>
                     <td>$row[id]</td>
-                    <td>$row[title]</td>
-                    <td>$row[description]</td>
+                    <td>$row[name]</td>
+                    <td>$row[designation]</td>
+                    <td>$row[department]</td>
+                    <td>$row[mobile]</td>
+                    <td>$row[email]</td>
+            
                     <td><img src='$row[image]' alt=''></td>
-                    <td><a href='updatenews.php? id=$row[id]' class='btn btn-info'>Edit</a></td>
-                    <td><a href='deletenews.php? id=$row[id]' class='btn btn-danger'>Delete</a></td>
+                   
+                    <td><a href='delettaecher.php? id=$row[id]' class='btn btn-danger'>Delete</a></td>
+                    <td><a href='updateteacher.php? id=$row[id]' class='btn btn-info'>Edit</a></td>
+
                     </tr>";
                     }
 
@@ -118,9 +125,35 @@ if (!isset($view)) {
 
 
 
+        <script>
+            const searchFun = () => {
+                let filter = document.getElementById("myInput").value.toUpperCase();
+
+                let myTable = document.getElementById("myTable");
+                let tr = myTable.getElementsByTagName("tr");
+
+                for (var i = 0; i < tr.length; i++) {
+                    let td = tr[i].getElementsByTagName("td")[1];
+
+                    if (td) {
+                        let textvalue = td.textContent || td.innerHTML;
+                        if (textvalue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }
+            };
+        </script>
+    </div>
+    </div>
 
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
 </html>

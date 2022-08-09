@@ -1,7 +1,4 @@
 <?php
-
-include 'config.php';
-
 session_start();
 
 
@@ -12,14 +9,8 @@ if (!isset($view)) {
     echo "<script>location.href = 'login.php'</script>";
 }
 
-$id = $_GET['id'];
-
-$datafetchquery = mysqli_query($conn, "SELECT * FROM `result` WHERE id = '$id'");
-
-$data = mysqli_fetch_array($datafetchquery);
-
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -85,70 +76,54 @@ $data = mysqli_fetch_array($datafetchquery);
             <li>
                 <a href="../index.php"><i class="fas fa-calendar"></i>Main Home</a>
             </li>
+
         </ul>
     </div>
     <div class="container mt-5">
-        <h1 class="text-center ">Update Result</h1>
-        <form action="upadateactionresult.php" method="POST" class="formview mt-1">
-
+        <form action="addteacheraction.php" method="POST" class="formview" enctype="multipart/form-data">
             <div class="form-group">
-                <label for="id_no">Student Id</label>
-                <input type="text" name="stu_id" class="form-control" value="<?php echo $data['student_id'] ?>" id="id_no" placeholder="Enter Id">
+                <label for="name">Name</label>
+                <input type="text" name="name" class="form-control" id="name" placeholder="Enter Name">
             </div>
             <div class="form-group">
-                <label for="name">Student Name</label>
-                <input type="text" name="stu_name" value="<?php echo $data['student_name'] ?>" class="form-control" id="name" placeholder="name">
+                <label for="designation">Designation</label>
+                <input type="text" name="designation" class="form-control" id="designation" placeholder="Designation">
             </div>
             <div class="form-group">
-                <label for="name">Course Title</label>
+                <label for="department">Department</label>
                 <div class="input-group mb-3">
 
-                    <select class="custom-select form-control" id="inputGroupSelect01" name="course_title">
-                        <option value="<?php echo $data['course_name'] ?>" selected>One</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <select class="custom-select form-control" id="department" name="department">
+
+                        <option value="CSE" selected>CSE</option>
+                        <option value="BBA">BBA</option>
+                        <option value="BBA">English</option>
+                        <option value="Law">Law</option>
+                        <option value="EEE">EEE</option>
+                        <option value="Bangla">Bangla</option>
                     </select>
                 </div>
             </div>
             <div class="form-group">
-                <label for="name">Course Code</label>
-                <div class="input-group mb-3">
-
-                    <select class="custom-select form-control" id="inputGroupSelect01" name="course_code">
-                        <option value="<?php echo $data['course_code'] ?>" selected>Main</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
+                <label for="mobile">Mobile</label>
+                <input type="text" name="mobile" class="form-control" id="mobile" placeholder="Designation">
             </div>
             <div class="form-group">
-                <label for="name">Semister</label>
-                <div class="input-group mb-3">
-
-                    <select class="custom-select form-control" id="inputGroupSelect01" name="semister">
-                        <option value="<?php echo $data['semister'] ?>" selected>main</option>
-                        <option value="1">2</option>
-                        <option value="2">3</option>
-                        <option value="3">4</option>
-                        <option value="1">5</option>
-                        <option value="2">6</option>
-                        <option value="3">7</option>
-                        <option value="1">8</option>
-                        <option value="2">9</option>
-                        <option value="3">10</option>
-                        <option value="2">11</option>
-                        <option value="3">12</option>
-                    </select>
-                </div>
+                <label for="email">Email</label>
+                <input type="email" name="email" class="form-control" id="email" placeholder="Designation">
             </div>
             <div class="form-group">
-                <label for="point">Point</label>
-                <input type="text" value="<?php echo $data['gpa'] ?>" class="form-control" name="point" id="point" placeholder="Point">
+                <label for="point">Area of Study</label>
+                <textarea name="areaofstudy" id="areaofstudy" cols="30" rows="10" class="form-control"></textarea>
             </div>
-
-            <input type="hidden" name="id" value="<?php echo $data['id'] ?>">
+            <div class="form-group">
+                <label for="biography">Biography</label>
+                <textarea name="biography" id="biography" cols="30" rows="10" class="form-control"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="nimg" class="form-label">Image</label>
+                <input type="file" id="nimg" name="nimg" class="form-control">
+            </div>
             <button type="submit" class="btn btn-outline-light col-12 mt-3">Submit</button>
         </form>
     </div>

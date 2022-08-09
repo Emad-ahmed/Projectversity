@@ -14,7 +14,7 @@ if (!isset($view)) {
 
 $id = $_GET['id'];
 
-$datafetchquery = mysqli_query($conn, "SELECT * FROM `news` WHERE id = '$id'");
+$datafetchquery = mysqli_query($conn, "SELECT * FROM `teacher` WHERE id = '$id'");
 
 $data = mysqli_fetch_array($datafetchquery);
 
@@ -86,26 +86,54 @@ $data = mysqli_fetch_array($datafetchquery);
     </div>
 
     <div class="container mt-5">
-        <h1 class="text-center mt-5 mb-4">Update News</h1>
-        <form action="updatenewsAction.php" id="form" method="POST" class="w-50 m-auto" enctype="multipart/form-data">
-            <div class="mb-3">
-                <label for="ntitle" class="form-label">News Title</label>
-                <input type="text" id="ntitle" name="ntitle" value="<?php echo $data['title'] ?>" class="form-control">
-            </div>
-            <div class="mb-3">
-                <label for="desc" class="form-label">All News</label>
-                <div class="form-floating">
-                    <input type="text" value="<?php echo $data['description'] ?>" class="form-control" name="desc" placeholder="write news here...." id="floatingTextarea"></input>
+        <h1 class="text-center mt-5 mb-4">Update Teacher</h1>
+        <form action="updateteacherAction.php" id="form" method="POST" class="w-50 m-auto" enctype="multipart/form-data">
 
+
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" value="<?php echo $data['name'] ?>" class="form-control" id="name" placeholder="Enter Name">
+            </div>
+            <div class="form-group">
+                <label for="designation">Designation</label>
+                <input type="text" name="designation" value="<?php echo $data['designation'] ?>" class="form-control" id="designation" placeholder="Designation">
+            </div>
+            <div class="form-group">
+                <label for="department">Department</label>
+                <div class="input-group mb-3">
+
+                    <select class="custom-select form-control" id="department" name="department">
+
+                        <option value="CSE" selected><?php echo $data['department'] ?></option>
+                        <option value="BBA">BBA</option>
+                        <option value="BBA">English</option>
+                        <option value="Law">Law</option>
+                        <option value="EEE">EEE</option>
+                        <option value="Bangla">Bangla</option>
+                    </select>
                 </div>
-
             </div>
-
+            <div class="form-group">
+                <label for="mobile">Mobile</label>
+                <input type="text" name="mobile" value="<?php echo $data['mobile'] ?>" class="form-control" id="mobile" placeholder="Designation">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" value="<?php echo $data['email'] ?>" class="form-control" id="email" placeholder="Designation">
+            </div>
+            <div class="form-group">
+                <label for="point">Area of Study</label>
+                <textarea name="areaofstudy" id="areaofstudy" cols="30" rows="10" class="form-control"><?php echo $data['areaofstudy'] ?></textarea>
+            </div>
+            <div class="form-group">
+                <label for="biography">Biography</label>
+                <textarea name="biography" id="biography" cols="30" rows="10" class="form-control"><?php echo $data['biography'] ?></textarea>
+            </div>
 
 
             <div class="mb-3">
                 <label for="nimg" class="form-label">Image</label>
-                <input type="file" id="fileupload" name="image" value="<?php echo $data['image'] ?>" class="form-control">
+                <input type="file" id="fileupload" id="nimg" name="nimg" value="<?php echo $data['image'] ?>" class="form-control">
             </div>
 
             <div>

@@ -68,6 +68,12 @@ if (!isset($view)) {
         <a href="addnews.php"><i class="fas fa-calendar"></i>Add News</a>
       </li>
       <li>
+        <a href="addteacher.php"><i class="fas fa-calendar"></i>Add Teacher</a>
+      </li>
+      <li>
+        <a href="show_teacher.php"><i class="fas fa-calendar"></i>Show Teacher</a>
+      </li>
+      <li>
         <a href="../index.php"><i class="fas fa-calendar"></i>Main Home</a>
       </li>
 
@@ -101,9 +107,9 @@ if (!isset($view)) {
 
           <select class="custom-select form-control" id="inputGroupSelect01" name="course_code">
             <option selected>Course Code</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            <option value="1">CSE-1111</option>
+            <option value="2">EEE-4127</option>
+            <option value="3">CSE-1112</option>
           </select>
         </div>
       </div>
@@ -131,10 +137,7 @@ if (!isset($view)) {
         <label for="point">Point</label>
         <input type="text" class="form-control" name="point" id="point" placeholder="Point">
       </div>
-      <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-      </div>
+
       <button type="submit" class="btn btn-outline-light col-12 mt-3">Submit</button>
     </form>
   </div>
